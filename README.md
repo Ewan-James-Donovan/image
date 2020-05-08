@@ -8,7 +8,7 @@
 2. [Canvas Objects](#Canvas-Objects)
 3. [Composite Canvas Objects](#Composite-Canvas-Objects)
 4. [Foreign Canvas Objects](#Foreign-Canvas-Objects)
-5. [Animation & Timed Events](#Animation-&-Timed-Events)
+5. [Animation & Scenes](#Animation-&-Timed-Events)
 6. [Mathematical Tools](#Mathematical-Tools)
 7. [Frame Rate & Performance Tests](#Frame-Rate-&-Performance-Tests)
 
@@ -20,11 +20,11 @@
 
 ## Foreign Canvas Objects - TBD<a name="Foriegn-Canvas-Objects"></a>
 
-## Animation, Scenes & Timed Events - TBD<a name="Animation-&-Timed-Events"></a>
+## Animation & Scenes - TBD<a name="Animation-&-Scenes"></a>
 
 ## Mathematical Tools - TBD <a name="Mathematical-Tools"></a>
 
 ## Frame Rate & Performance Tests - TBD <a name="Frame-Rate-&-Performance-Tests"></a>
-IMAGE, similar to the 'react' framework, manipulates a virtual document object model (VDOM) which yeilds a significant performance increase compared to writing repeatedly to the DOM. For instance, in previous iterations of IMAGE, a scene with 300 canvas objects would need to make 300 costly DOM manipulations, leading to sub-30 frame rates, which is the minimum to meet acceptance critera. With the new VDOM approach, 300 non-costly manipulations to the VDOM are needed and are followed by a single costly DOM manipulation, which yields frame rates from 50 upward. IMAGE drawing performance is limited only by pure javascript capabilites and not by calls to the DOM.
+IMAGE, similar to the 'react' framework, manipulates a virtual document object model (VDOM) which yeilds a significant performance increase compared to writing repeatedly to the DOM. For instance, in previous iterations of IMAGE, a scene with 300 canvas objects would need to make 300 costly DOM manipulations, leading to sub-30 frame rates, which is the minimum to meet acceptance critera. With the new VDOM approach, 300 non-costly manipulations to the VDOM are needed and are followed by a single costly DOM manipulation, yeilding frame rates of 50 and above. Drawing performance is limited only by pure javascript capabilites and not by calls to the DOM.
 
 `No tests as of version 0.0.2`
