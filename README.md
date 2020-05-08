@@ -5,15 +5,18 @@
 - TBD
 ## Table of Contents
 1. [Getting Started](#Getting-Started)
-2. [Canvas Objects](#Canvas-Objects)
-3. [Composite Canvas Objects](#Composite-Canvas-Objects)
-4. [Foreign Canvas Objects](#Foreign-Canvas-Objects)
-5. [Animation & Scenes](#Animation-&-Timed-Events)
-6. [Mathematical Tools](#Mathematical-Tools)
-7. [Acceptance Tests](#Acceptance-Tests)
-8. [Frame Rate & Performance Tests](#Frame-Rate-&-Performance-Tests)
+2. [Canvas](#Canvas)
+3. [Canvas Objects](#Canvas-Objects)
+4. [Composite Canvas Objects](#Composite-Canvas-Objects)
+5. [Foreign Canvas Objects](#Foreign-Canvas-Objects)
+6. [Animation & Scenes](#Animation-&-Timed-Events)
+7. [Mathematical Tools](#Mathematical-Tools)
+8. [Acceptance Tests](#Acceptance-Tests)
+9. [Frame Rate & Performance Tests](#Frame-Rate-&-Performance-Tests)
 
 ## Getting Started - TBD<a name="Getting-Started"></a>
+
+## Canvas - TBD<a name="Canvas"></a>
 
 ## Canvas Objects - TBD<a name="Canvas-Objects"></a>
 
