@@ -4,12 +4,16 @@ export default class Registry {
         this.canvasObjects = [];
     }
 
-    addObject(canvasObject) {
+    addCanvasObject(canvasObject) {
         this.canvasObjects.push(canvasObject);
     }
 
     getCanvasObjects() {
         return this.canvasObjects;
+    }
+
+    clear() {
+        this.canvasObjects = [];
     }
 
 }

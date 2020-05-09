@@ -6,8 +6,8 @@ import NotSizable from "./Errors/NotSizable.js";
 
 export default class ErrorHandler {
 
-    static checkType(variable, typeToCheckFor) {
-        return TypeChecker(variable, typeToCheckFor);
+    static checkType(variableName, variable, typeToCheckFor) {
+        return TypeChecker(variableName, variable, typeToCheckFor);
     }
     
     static notFillable() {

@@ -25,9 +25,9 @@ export default class Renderer {
         this.firstDraw = true;
     }
 
-    draw(canvas) {
+    render() {
         // Clears automatically due to assignment.
-        this.parentElement.innerHTML = this.svgBuildler.build(registry);
+        this.parentElement.innerHTML = this.svgBuildler.build(this.registry);
 
         if (this.firstDraw) {
             const boundingClientRect = document

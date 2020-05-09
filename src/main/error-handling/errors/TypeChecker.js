@@ -1,6 +1,5 @@
-export default function (variable, typeToCheckFor) {
-    const name = obj => Object.keys(obj)[0];
+export default function (variablePath, variable, typeToCheckFor) {
     if (typeof variable != typeToCheckFor) {
-        throw `exception: Type of variable, ${name(variable)}, is '${typeof variable}'. Expected type: '${typeToCheckFor}'`;
+        throw `exception: Type of variable, ${variablePath}, is '${typeof variable}'. Expected type: '${typeToCheckFor}'.`;
     }
 }

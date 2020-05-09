@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="module">
+        import Image from "../../main/driver-code/Image.js";
+        let img = new Image();
+        img.createCanvas("test", "100px", "100px", "grey");
+        img.frame(() => {
+            img.draw.rectangle()
+                .position(10, 10)
+                .width(10)
+                .height(10)
+        });
+    </script>
+</head>
+
+<body style="margin: 0;">
+    <p>Should render a grey 100px by 100px canvas and a red 10px by 20px rectangle.</p>
+    <div id="test"></div>
+</body>
+
+</html>
