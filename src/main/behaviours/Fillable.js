@@ -1,6 +1,10 @@
-import ErrorHandler from "../error-handling/ErrorHandler";
+import ErrorHandler from "../error-handling/ErrorHandler.js";
 
-export default function (fillColor) {
-    ErrorHandler.checkType(fillColor, "string");
-    this.tag.addAttribute("fill", fillColor);
+export default class Fillable {
+
+    fill(cssFillColor) {
+        this.tag.addAttribute("fill", cssFillColor);
+        return this;
+    }
+
 }
