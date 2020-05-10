@@ -10,23 +10,23 @@ export default class Rectangle extends SimpleCanvasObject {
         super(registry);
         this.setTagName("rect");
 
-        this.positionable = new Positionable();
-        this.x = this.positionable.x;
-        this.y = this.positionable.y;
-        this.position = this.positionable.position;
+        const positionable = new Positionable();
+        this.x = positionable.x;
+        this.y = positionable.y;
+        this.position = positionable.position;
 
-        this.sizable = new Sizeable();
-        this.width = this.sizable.width;
-        this.height = this.sizable.height;
-        this.size = this.sizable.size;
+        const sizable = new Sizeable();
+        this.width = sizable.width;
+        this.height = sizable.height;
+        this.size = sizable.size;
 
-        this.fillable = new Fillable();
-        this.fill = this.fillable.fill;
+        const fillable = new Fillable();
+        this.fill = fillable.fill;
 
-        this.strokable = new Strokable();
-        this.strokeColor = this.strokable.strokeColor;
-        this.strokeWidth = this.strokable.strokeWidth;
-        this.stroke = this.strokable.stroke;
+        const strokable = new Strokable();
+        this.strokeColor = strokable.strokeColor;
+        this.strokeWidth = strokable.strokeWidth;
+        this.stroke = strokable.stroke;
     }
 
 }

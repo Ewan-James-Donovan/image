@@ -15,7 +15,6 @@ export default class Image {
         this.renderer = new Renderer(canvasParentCSSId, canvasWidth, canvasHeight, canvasBackgroundColor, this.registry);
         this.drawer = new Drawer(this.registry);
         this.draw = this.drawer;
-        return this;
     }
 
     frame(func) {

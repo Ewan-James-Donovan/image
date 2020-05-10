@@ -1,24 +1,37 @@
 <!DOCTYPE html>
 <html>
 
-<head>
+<body style="margin: 0;">
+    <p>Should render a grey canvas and a red circle with a black outline.</p>
+    <div id="test"></div>
     <script type="module">
         import Image from "../../main/driver-code/Image.js";
         let img = new Image();
-        img.createCanvas("test", "100px", "100px", "grey")
-            .frame(() => {
-                img.draw.circle()
-                    .position(25, 25)
-                    .fill("red")
-                    .stroke("black", 2)
-                    .radius(10)
-            });
+        img.createCanvas("test", "100px", "100px", "grey");
+        img.frame(() => {
+            img.draw.circle()
+                .position(25, 25)
+                .fill("red")
+                .stroke("black", 2)
+                .radius(10);
+        });
+        // let n = 0;
+        // (function test() {
+        //     img.createCanvas("test", "100px", "100px", "grey")
+        //         .frame(() => {
+        //             for (let i = 0; i < 700; i++) {
+        //                 img.draw.circle()
+        //                     .position(n, n)
+        //                     .fill("red")
+        //                     .stroke("black", 2)
+        //                     .radius(10);
+        //             }
+        //         });
+        //     setTimeout(test, 1000 / 30);
+        //     n++;
+        //     console.log(n)
+        // }());
     </script>
-</head>
-
-<body style="margin: 0;">
-    <p>Should render a grey 100px by 100px canvas and a red circle with a 2px black outline and a radius of 10px.</p>
-    <div id="test"></div>
 </body>
 
 </html>

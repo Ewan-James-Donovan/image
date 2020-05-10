@@ -19,7 +19,6 @@ export default class Renderer {
             this.canvasWidthPx = boundingClientRect.width;
             this.canvasHeightPx = boundingClientRect.height;
         };
-        this.svgBuildler = new SVGBuilder();
         this.registry = registry;
 
         this.firstDraw = true;
@@ -27,7 +26,7 @@ export default class Renderer {
 
     render() {
         // Clears automatically due to assignment.
-        this.parentElement.innerHTML = this.svgBuildler.build(this.registry);
+        this.parentElement.innerHTML = SVGBuilder.build(this.registry);
 
         if (this.firstDraw) {
             const boundingClientRect = document

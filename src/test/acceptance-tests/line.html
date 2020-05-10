@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<body style="margin: 0;">
+    <p>Should render a grey canvas and a pink line.</p>
+    <div id="test"></div>
+    <script type="module">
+        import Image from "../../main/driver-code/Image.js";
+        let img = new Image();
+        img.createCanvas("test", "100px", "100px", "grey");
+        img.frame(() => {
+            img.draw.line()
+                .position(25, 25, 50, 50)
+                .stroke("hotpink", 2);
+        });
+    </script>
+</body>
+
+</html>

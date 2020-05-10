@@ -1,5 +1,6 @@
 import Rectangle from "../canvas-objects/simple-canvas-objects/Rectangle.js";
 import Circle from "../canvas-objects/simple-canvas-objects/Circle.js";
+import Line from "../canvas-objects/simple-canvas-objects/Line.js";
 
 export default class Draw {
 
@@ -17,6 +18,10 @@ export default class Draw {
 
     circle() {
         return new Circle(this.registry);
+    }
+
+    line() {
+        return new Line(this.registry);
     }
 
 }

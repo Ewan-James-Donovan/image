@@ -10,18 +10,18 @@ export default class Circle extends SimpleCanvasObject {
         super(registry);
         this.setTagName("circle");
 
-        this.positionable = new Positionable().useCenterMode();
-        this.x = this.positionable.x;
-        this.y = this.positionable.y;
-        this.position = this.positionable.position;
+        const positionable = new Positionable().useCenterMode();
+        this.x = positionable.x;
+        this.y = positionable.y;
+        this.position = positionable.position;
 
-        this.fillable = new Fillable();
-        this.fill = this.fillable.fill;
+        const fillable = new Fillable();
+        this.fill = fillable.fill;
 
-        this.strokable = new Strokable();
-        this.strokeColor = this.strokable.strokeColor;
-        this.strokeWidth = this.strokable.strokeWidth;
-        this.stroke = this.strokable.stroke;
+        const strokable = new Strokable();
+        this.strokeColor = strokable.strokeColor;
+        this.strokeWidth = strokable.strokeWidth;
+        this.stroke = strokable.stroke;
 
         this.radius = new RadiusDefinable().radius;
 

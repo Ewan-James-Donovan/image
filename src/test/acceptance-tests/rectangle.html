@@ -5,19 +5,19 @@
     <script type="module">
         import Image from "../../main/driver-code/Image.js";
         let img = new Image();
-        img.createCanvas("test", "100px", "100px", "grey")
-            .frame(() => {
-                img.draw.rectangle()
-                    .position(10, 10)
-                    .size(10, 20)
-                    .fill("red")
-                    .stroke("black", 2)
-            });
+        img.createCanvas("test", "100px", "100px", "grey");
+        img.frame(() => {
+            img.draw.rectangle()
+                .position(10, 10)
+                .size(10, 20)
+                .fill("red")
+                .stroke("black", 2);
+        });
     </script>
 </head>
 
 <body style="margin: 0;">
-    <p>Should render a grey 100px by 100px canvas and a red 10px by 20px rectangle with a 2px black outline.</p>
+    <p>Should render a grey canvas and a red rectangle with a black outline.</p>
     <div id="test"></div>
 </body>
 

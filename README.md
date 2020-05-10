@@ -23,7 +23,7 @@ After that, create a new javascript file and add the line below to it. This new 
 import Image from "path/to/Image.js";
 ```
 Next, you need to include this new file as a module script on the page you desire to render drawings on.
-Place the code below into the head tag of the HTML file of your desired page.
+Place the code below just before the closing body tag on your desired page.
 
 ```html
 <script type="module" src="path/to/your/file.js"></script>
