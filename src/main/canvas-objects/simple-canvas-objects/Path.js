@@ -27,7 +27,6 @@ export default class Path extends SimpleCanvasObject {
     }
 
     type(pathType) {
-        console.log(this.nestedPointArray)
         if (!this.pointsDefined) {
             throw `define points before path type`;
         }

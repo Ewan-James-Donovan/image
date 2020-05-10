@@ -42,18 +42,25 @@ export default class Arc extends AbstractCanvasObject {
         if (!this.radiusValue && this.radiusValue != 0) {
             throw `define radius`;
         }
-        this.startAngleValue = startAngleValue;
+        this.startAngleValue = startAngleValue % (2 * Math.PI);
         this.startAngleCalled = true;
         return this;
     }
 
     endAngle(endAngle) {
+        endAngle %= 2 * Math.PI + 0.000000000000001;
         if (!this.startAngleCalled) {
             throw `call start angle first`;
         }
         let points = [];
-        for (let i = this.startAngleValue; i <= endAngle; i += (endAngle - this.startAngleValue) / this.sampleValue) {
-            points.push(MathTools.cis(this.radiusValue, i, this.xPosition, this.yPosition));
+        if (endAngle < this.startAngleValue) {
+            for (let i = endAngle; i <= this.startAngleValue; i += (this.startAngleValue - endAngle) / this.sampleValue) {
+                points.push(MathTools.cis(this.radiusValue, i, this.xPosition, this.yPosition));
+            }
+        } else { 
+            for (let i = this.startAngleValue; i <= endAngle; i += (endAngle - this.startAngleValue) / this.sampleValue) {
+                points.push(MathTools.cis(this.radiusValue, i, this.xPosition, this.yPosition));
+            }
         }
         this.path
             .points(points).type("linear")
