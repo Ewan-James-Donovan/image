@@ -10,7 +10,7 @@
         img.createCanvas("test", "100px", "100px", "grey");
         img.frame(() => {
             img.draw.circle()
-                .position(25, 25)
+                .position(img.canvasWidth / 2, img.canvasHeight / 2)
                 .fill("red")
                 .stroke("black", 2)
                 .radius(10);

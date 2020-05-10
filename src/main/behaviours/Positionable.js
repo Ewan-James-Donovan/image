@@ -1,5 +1,22 @@
 export default class Positionable {
 
+    useInstanceVariableMode() {
+        this.x = function (x) {
+            this.xPosition = x;
+            return this;
+        };
+        this.y = function (y) {
+            this.yPosition = y;
+            return this;
+        };
+        this.position = function (x, y) {
+            this.x(x);
+            this.y(y);
+            return this;
+        }
+        return this;
+    }
+
     useLineMode() {
         this.x = function (x) {
             this.tag.addAttribute("x1", x);

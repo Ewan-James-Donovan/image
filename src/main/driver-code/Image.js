@@ -15,10 +15,13 @@ export default class Image {
         this.renderer = new Renderer(canvasParentCSSId, canvasWidth, canvasHeight, canvasBackgroundColor, this.registry);
         this.drawer = new Drawer(this.registry);
         this.draw = this.drawer;
+        this.canvasId = this.renderer.canvasParentCSSId;
     }
 
     frame(func) {
         this.registry.clear();
+        this.canvasWidth = this.renderer.canvasWidthPx;
+        this.canvasHeight = this.renderer.canvasHeightPx;
         this.drawer.callFunction(func);
         this.renderer.render();
     }

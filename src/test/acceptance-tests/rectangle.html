@@ -8,8 +8,8 @@
         img.createCanvas("test", "100px", "100px", "grey");
         img.frame(() => {
             img.draw.rectangle()
-                .position(10, 10)
-                .size(10, 20)
+                .position(img.canvasWidth / 2 - 10, img.canvasHeight / 2 - 10)
+                .size(20, 20)
                 .fill("red")
                 .stroke("black", 2);
         });

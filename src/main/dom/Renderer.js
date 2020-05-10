@@ -12,31 +12,20 @@ export default class Renderer {
             this.parentElement
                 .setAttribute("style", `width: ${width}; height: ${height};`);
         }
-        this.parentElement.onresize = function () {
-            const boundingClientRect = document
-                .getElementById(this.canvasParentCSSId)
-                .getBoundingClientRect();
-            this.canvasWidthPx = boundingClientRect.width;
-            this.canvasHeightPx = boundingClientRect.height;
-        };
+        const boundingClientRect = this.parentElement
+            .getBoundingClientRect();
+        this.canvasWidthPx = boundingClientRect.width;
+        this.canvasHeightPx = boundingClientRect.height;
         this.registry = registry;
-
-        this.firstDraw = true;
     }
 
     render() {
+        const boundingClientRect = this.parentElement
+            .getBoundingClientRect();
+        this.canvasWidthPx = boundingClientRect.width;
+        this.canvasHeightPx = boundingClientRect.height;
         // Clears automatically due to assignment.
         this.parentElement.innerHTML = SVGBuilder.build(this.registry);
-
-        if (this.firstDraw) {
-            const boundingClientRect = document
-                .getElementById(this.canvasParentCSSId)
-                .getBoundingClientRect();
-            this.canvasWidthPx = boundingClientRect.width;
-            this.canvasHeightPx = boundingClientRect.height;
-            this.firstDraw = false;
-        }
-
     }
 
     clear() {
