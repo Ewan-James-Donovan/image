@@ -31,6 +31,7 @@ export default class Path extends SimpleCanvasObject {
             throw `define points before path type`;
         }
         this.tag.addAttribute("d", this.pathBuilder(this.nestedPointArray, pathType.toLowerCase()));
+        console.log(this.pathBuilder(this.nestedPointArray, pathType.toLowerCase()))
         return this;
     }
 
@@ -40,6 +41,8 @@ export default class Path extends SimpleCanvasObject {
             case "linear":
                 pathOperator = "L";
                 break;
+            case "piecewise-linear":
+                return this.discontinuousPathBuilder(nestedPointArray, pathType, closedPath);
             default:
                 throw `Image: expection not defined.`;
         }
@@ -52,6 +55,24 @@ export default class Path extends SimpleCanvasObject {
             } else {
                 pathString += `${pathOperator} ${pointArr[0]} ${pointArr[1]} `
             }
+        }
+        if (closedPath) {
+            pathString += "Z";
+        }
+        return pathString;
+    }
+
+    discontinuousPathBuilder(nestedNestedPointArray, pathType, closedPath) {
+        switch (pathType) {
+            case "piecewise-linear":
+                pathType = "linear";
+                break;
+            default:
+                throw `Image: expection not defined.`;
+        }
+        let pathString = "";
+        for (let nestedPointArray of nestedNestedPointArray) {
+            pathString += this.pathBuilder(nestedPointArray, "linear");
         }
         if (closedPath) {
             pathString += "Z";

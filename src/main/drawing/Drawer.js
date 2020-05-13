@@ -3,6 +3,7 @@ import Circle from "../canvas-objects/simple-canvas-objects/Circle.js";
 import Line from "../canvas-objects/simple-canvas-objects/Line.js";
 import Path from "../canvas-objects/simple-canvas-objects/Path.js";
 import Arc from "../canvas-objects/abstract-canvas-objects/Arc.js";
+import Axis from "../canvas-objects/abstract-canvas-objects/Axis.js";
 
 export default class Draw {
 
@@ -32,6 +33,10 @@ export default class Draw {
 
     arc() {
         return new Arc(this.registry);
+    }
+
+    axis() {
+        return new Axis(this.registry);
     }
 
 }

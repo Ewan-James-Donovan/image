@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<body style="margin: 0;">
+    <p>Should render a grey canvas, a lime path, and a cyan discontinuous path.</p>
+    <div id="test"></div>
+    <script type="module">
+        import Image from "../../../main/driver-code/Image.js";
+        let img = new Image();
+        img.createCanvas("test", "100px", "100px", "grey");
+        img.frame(() => {
+            img.draw.path()
+                .points([[10, 30], [90, 70], [10, 90]])
+                .type("linear")
+                .stroke("lime", 3);
+            img.draw.path()
+                .points([
+                    [[10, 10], [90, 50]],
+                    [[10, 50], [90, 90]]
+                ])
+                .type("piecewise-linear")
+                .stroke("cyan", 3);
+        });
+    </script>
+</body>
+
+</html>

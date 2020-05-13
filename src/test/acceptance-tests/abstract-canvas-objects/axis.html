@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<body style="margin: 0;">
+    <p>Should render a grey canvas, a black horizontal axis, and a white vertical axis (Side-by-side).</p>
+    <div id="test"></div>
+    <script type="module">
+        import Image from "../../../main/driver-code/Image.js";
+        let img = new Image();
+        img.createCanvas("test", "200px", "100px", "grey");
+        img.frame(() => {
+            img.draw.axis()
+
+                .stroke("black", 2)
+                .start(90)
+                .end(10)
+                .orientation("horizontal")
+                
+                .range(-50, 50)
+                .majorTickMark(10);
+        });
+    </script>
+</body>
+
+</html>
