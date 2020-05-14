@@ -7,16 +7,24 @@
     <script type="module">
         import Image from "../../../main/driver-code/Image.js";
         let img = new Image();
-        img.createCanvas("test", "200px", "100px", "grey");
+        img.createCanvas("test", "100px", "100px", "grey");
         img.frame(() => {
             img.draw.axis()
-
-                .stroke("black", 2)
+                .stroke("white", 1)
                 .start(10)
                 .end(90)
+                .orientation("vertical")
+                .position(90)
+                .range(-20, 20)
+                .majorTickMark(10)
+                .minorTickMark(5);
+            img.draw.axis()
+                .stroke("black", 1)
+                .start(10)
+                .end(80)
                 .orientation("horizontal")
-                
-                .range(-50, 50)
+                .position(50)
+                .range(-20, 20)
                 .majorTickMark(10)
                 .minorTickMark(5);
         });

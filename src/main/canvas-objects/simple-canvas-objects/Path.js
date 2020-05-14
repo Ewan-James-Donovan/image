@@ -31,6 +31,7 @@ export default class Path extends SimpleCanvasObject {
             throw `define points before path type`;
         }
         this.tag.addAttribute("d", this.pathBuilder(this.nestedPointArray, pathType.toLowerCase()));
+        
         console.log(this.pathBuilder(this.nestedPointArray, pathType.toLowerCase()))
         return this;
     }
