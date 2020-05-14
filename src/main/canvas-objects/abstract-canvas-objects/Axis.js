@@ -41,21 +41,28 @@ export default class Axis extends AbstractCanvasObject {
 
     majorTickMark(majorTickMarkVal) {
         this.majorTickMarkVal = majorTickMarkVal;
-        this.majorTickPixelIncrement = (this.startValue - this.endValue) / (this.upperRange - this.lowerRange) * majorTickMarkVal;
+        this.majorTickPixelIncrement = (this.endValue - this.startValue) / (this.upperRange - this.lowerRange) * majorTickMarkVal;
         let i = 0;
-        while (i <= this.startValue - this.endValue) {
+        while (i <= this.endValue - this.startValue) {
             console.log("hello")
-            this.lineArr.push([[i + this.endValue, this.yPosition - 2.5], [i + this.endValue, this.yPosition + 2.5]]); /// SHOULD BE START VALUE???
+            this.lineArr.push([[i + this.startValue, this.yPosition - 2.5], [i + this.startValue, this.yPosition + 2.5]]);
             i += this.majorTickPixelIncrement;
         }
         console.log(this.lineArr)
-        this.path.points(this.lineArr).type("piecewise-linear").stroke("black", 2);
+        
         return this;
     }
 
     minorTickMark(minorTickMarkVal) {
         this.minorTickMarkVal = minorTickMarkVal;
-        this.minorTickPixelIncrement = (this.startValue - this.endValue) / (this.upperRange - this.lowerRange) * minorTickMarkVal;
+        this.minorTickPixelIncrement = (this.endValue - this.startValue) / (this.upperRange - this.lowerRange) * minorTickMarkVal;
+        let i = 0;
+        while (i <= this.endValue - this.startValue) {
+            console.log("hello")
+            this.lineArr.push([[i + this.startValue, this.yPosition - 2], [i + this.startValue, this.yPosition + 2]]);
+            i += this.minorTickPixelIncrement;
+        }
+        this.path.points(this.lineArr).type("piecewise-linear").stroke("black", 2);
         return this;
     }
 
