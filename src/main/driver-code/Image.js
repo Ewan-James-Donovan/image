@@ -20,8 +20,14 @@ export default class Image {
         Animator.animate(state, func, this);
     }
 
-    scene() {
-
+    scene(state, startTime, endTime, func) {
+        let sceneIsReadyToPlay = false;
+        if (state.frame >= (state.desiredFrameRate / 1000) * startTime && state.frame < (state.desiredFrameRate / 1000) * endTime) {
+            sceneIsReadyToPlay = true;
+        }
+        if (sceneIsReadyToPlay) {
+            func(state);
+        }
     }
 
 }
