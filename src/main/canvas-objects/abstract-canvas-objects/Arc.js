@@ -1,8 +1,8 @@
 import AbstractCanvasObject from "../AbstractCanvasObject.js";
-import Strokable from "../../behaviours/Strokable.js";
-import Fillable from "../../behaviours/Fillable.js";
-import Positionable from "../../behaviours/Positionable.js";
-import RadiusDefinable from "../../behaviours/RadiusDefinable.js";
+import Strokable from "../behaviours/Strokable.js";
+import Fillable from "../behaviours/Fillable.js";
+import Positionable from "../behaviours/Positionable.js";
+import RadiusDefinable from "../behaviours/RadiusDefinable.js";
 import Path from "../simple-canvas-objects/Path.js";
 import MathTools from "../../utils/MathTools.js";
 

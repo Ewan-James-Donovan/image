@@ -1,6 +1,6 @@
 import AbstractCanvasObject from "../AbstractCanvasObject.js";
-import Strokable from "../../behaviours/Strokable.js";
-import Positionable from "../../behaviours/Positionable.js";
+import Strokable from "../behaviours/Strokable.js";
+import Positionable from "../behaviours/Positionable.js";
 import Path from "../simple-canvas-objects/Path.js";
 
 export default class Axis extends AbstractCanvasObject {

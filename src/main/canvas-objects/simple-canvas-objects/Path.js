@@ -1,6 +1,6 @@
 import SimpleCanvasObject from "../SimpleCanvasObject.js";
-import Strokable from "../../behaviours/Strokable.js";
-import Fillable from "../../behaviours/Fillable.js";
+import Strokable from "../behaviours/Strokable.js";
+import Fillable from "../behaviours/Fillable.js";
 
 export default class Path extends SimpleCanvasObject {
 

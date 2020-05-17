@@ -1,6 +1,6 @@
 import SimpleCanvasObject from "../SimpleCanvasObject.js";
-import Positionable from "../../behaviours/Positionable.js";
-import Strokable from "../../behaviours/Strokable.js";
+import Positionable from "../behaviours/Positionable.js";
+import Strokable from "../behaviours/Strokable.js";
 
 export default class Line extends SimpleCanvasObject {
 

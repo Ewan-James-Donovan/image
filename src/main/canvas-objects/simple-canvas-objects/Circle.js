@@ -1,8 +1,8 @@
 import SimpleCanvasObject from "../SimpleCanvasObject.js";
-import Positionable from "../../behaviours/Positionable.js";
-import Fillable from "../../behaviours/Fillable.js";
-import Strokable from "../../behaviours/Strokable.js";
-import RadiusDefinable from "../../behaviours/RadiusDefinable.js";
+import Positionable from "../behaviours/Positionable.js";
+import Fillable from "../behaviours/Fillable.js";
+import Strokable from "../behaviours/Strokable.js";
+import RadiusDefinable from "../behaviours/RadiusDefinable.js";
 
 export default class Circle extends SimpleCanvasObject {
 

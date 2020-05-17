@@ -1,8 +1,8 @@
 import SimpleCanvasObject from "../SimpleCanvasObject.js";
-import Positionable from "../../behaviours/Positionable.js";
-import Sizeable from "../../behaviours/Sizeable.js";
-import Fillable from "../../behaviours/Fillable.js";
-import Strokable from "../../behaviours/Strokable.js";
+import Positionable from "../behaviours/Positionable.js";
+import Sizeable from "../behaviours/Sizeable.js";
+import Fillable from "../behaviours/Fillable.js";
+import Strokable from "../behaviours/Strokable.js";
 
 export default class Rectangle extends SimpleCanvasObject {
 

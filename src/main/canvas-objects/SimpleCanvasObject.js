@@ -1,4 +1,4 @@
-import Tag from "../virtual-dom/Tag.js";
+import Tag from "../drawing/virtual-dom/Tag.js";
 
 export default class SimpleCanvasObject {
 

@@ -1,4 +1,4 @@
-import ErrorHandler from "../error-handling/ErrorHandler.js";
+// import ErrorHandler from "../../error-handling/ErrorHandler.js";
 import Attribute from "./Attribute.js";
 
 export default class Tag {

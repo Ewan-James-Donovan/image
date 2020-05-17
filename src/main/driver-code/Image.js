@@ -1,6 +1,7 @@
 import Animator from "../drawing/animation/Animator.js";
 import Frame from "../drawing/Frame.js";
 import Canvas from "../drawing/Canvas.js";
+import Scene from "../drawing/animation/Scene.js";
 
 export default class Image {
 
@@ -13,6 +14,9 @@ export default class Image {
     }
 
     frame(func, state) {
+        if (!this.frameObj) {
+            throw "";
+        }
         this.frameObj.render(func, state);
     }
 
@@ -21,13 +25,7 @@ export default class Image {
     }
 
     scene(state, startTime, endTime, func) {
-        let sceneIsReadyToPlay = false;
-        if (state.frame >= (state.desiredFrameRate / 1000) * startTime && state.frame < (state.desiredFrameRate / 1000) * endTime) {
-            sceneIsReadyToPlay = true;
-        }
-        if (sceneIsReadyToPlay) {
-            func(state);
-        }
+        Scene.create(state, startTime, endTime, func);
     }
 
 }

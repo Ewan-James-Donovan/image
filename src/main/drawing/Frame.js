@@ -1,6 +1,6 @@
-import Renderer from "../dom/Renderer.js";
-import Registry from "../registry/Registry.js";
-import ConstructionRegistry from "../registry/ConstructionRegistry.js";
+import Renderer from "./dom/Renderer.js";
+import Registry from "./registry/Registry.js";
+import ConstructionRegistry from "./registry/ConstructionRegistry.js";
 import Drawer from "../drawing/Drawer.js";
 
 export default class Frame {
