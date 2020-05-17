@@ -1,7 +1,8 @@
 export default class AbstractCanvasObject {
 
-    constructor(registry) {
+    constructor(registry, constructionRegistry) {
         this.registry = registry;
+        this.constructionRegistry = constructionRegistry;
     }
 
 }

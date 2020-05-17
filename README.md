@@ -1,4 +1,4 @@
-# <b>IMAGE 0.0.5</b>
+# <b>IMAGE 0.0.12</b>
 ## <b>I</b>nteractive <b>M</b>athematical <b>A</b>nimation <b>G</b>eneration <b>E</b>ngine
 
 <b>IMAGE</b> is used to simplify the dynamic creation of SVG elements inside an SVG tag on a web page while providing useful constructs for mathematical drawings. It currently facilitates the configuraton, drawing, animation, and styling of:

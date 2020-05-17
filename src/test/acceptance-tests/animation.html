@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="module">
+        import Image from "../../main/driver-code/Image.js";
+        let img = new Image();
+        img.createCanvas("test", "100px", "100px", "grey");
+        img.animate({ desiredFrameRate: 60, logFrameRate: true }, state => {
+            img.draw.rectangle()
+                .position(state.frame % (img.canvasWidth + 25) - 25, (img.canvasHeight / 8) * 2 - 10)
+                .size(20, 20)
+                .fill("red")
+                .stroke("black", 2);
+            img.draw.rectangle()
+                .position((state.frame / 2) % (img.canvasWidth + 25) - 25, (img.canvasHeight / 8) * 4 - 10)
+                .size(20, 20)
+                .fill("blue")
+                .stroke("black", 2);
+            img.draw.rectangle()
+                .position((state.frame / 4) % (img.canvasWidth + 25) - 25, (img.canvasHeight / 8) * 6 - 10)
+                .size(20, 20)
+                .fill("lime")
+                .stroke("black", 2);
+        });
+    </script>
+</head>
+
+<body style="margin: 0;">
+    <p>Should produce three squares moving in a marquee fashion.</p>
+    <div id="test"></div>
+</body>
+
+</html>

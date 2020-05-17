@@ -10,23 +10,24 @@
         img.createCanvas("test", "100px", "100px", "grey");
         img.frame(() => {
             img.draw.axis()
-                .orientation("vertical")
-                .stroke("white", 1)
-                .start(25)
-                .end(75)
+                .stroke("black", 1)
                 .tickMarkSize(6)
+                .start(20)
+                .end(80)
+                .orientation("vertical")
+                .position(50)
+                .gridMode()
                 .range(-20, 20)
                 .majorTickMark(10)
-                .minorTickMark(5)
-                .position(80);
-                
+                .minorTickMark(5);
             img.draw.axis()
                 .stroke("black", 1)
                 .tickMarkSize(6)
-                .start(10)
-                .end(60)
+                .start(20)
+                .end(80)
                 .orientation("horizontal")
                 .position(50)
+                .gridMode()
                 .range(-20, 20)
                 .majorTickMark(10)
                 .minorTickMark(5);

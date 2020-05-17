@@ -7,12 +7,16 @@ import Axis from "../canvas-objects/abstract-canvas-objects/Axis.js";
 
 export default class Draw {
 
-    constructor(registry) {
+    constructor(registry, constructionRegistry) {
         this.registry = registry;
+        this.constructionRegistry = constructionRegistry;
     }
 
-    callFunction(func) {
-        func();
+    callFunction(func, state) {
+        func(state);
+        if (state) {
+            state.frame++;
+        }
     }
 
     rectangle() {
@@ -36,7 +40,7 @@ export default class Draw {
     }
 
     axis() {
-        return new Axis(this.registry);
+        return new Axis(this.registry, this.constructionRegistry);
     }
 
 }

@@ -4,7 +4,6 @@ export default class SimpleCanvasObject {
 
     constructor(registry) {
         this.tag = new Tag();
-        this.tags = [this.tag];
         registry.addCanvasObject(this);
     }
 

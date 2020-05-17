@@ -2,7 +2,7 @@ import SVGBuilder from "../virtual-dom/SVGBuilder.js";
 
 export default class Renderer {
 
-    constructor(canvasParentCSSId, width, height, backgroundColor, registry) {
+    constructor(canvasParentCSSId, width, height, backgroundColor, registry, constructionRegistry) {
         this.canvasParentCSSId = canvasParentCSSId;
         this.parentElement = document.getElementById(canvasParentCSSId);
         if (backgroundColor) {
@@ -17,6 +17,7 @@ export default class Renderer {
         this.canvasWidthPx = boundingClientRect.width;
         this.canvasHeightPx = boundingClientRect.height;
         this.registry = registry;
+        this.constructionRegistry = constructionRegistry;
     }
 
     render() {
@@ -25,7 +26,7 @@ export default class Renderer {
         this.canvasWidthPx = boundingClientRect.width;
         this.canvasHeightPx = boundingClientRect.height;
         // Clears automatically due to assignment.
-        this.parentElement.innerHTML = SVGBuilder.build(this.registry);
+        this.parentElement.innerHTML = SVGBuilder.build(this.registry, this.constructionRegistry);
     }
 
     clear() {

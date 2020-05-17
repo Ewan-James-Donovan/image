@@ -5,29 +5,25 @@ import Path from "../simple-canvas-objects/Path.js";
 
 export default class Axis extends AbstractCanvasObject {
 
-    constructor(registry) {
+    constructor(registry, constructionRegistry) {
 
-        super(registry);
+        super(registry, constructionRegistry);
 
         const strokable = new Strokable().useInstanceVariableMode();
         this.strokeColor = strokable.strokeColor;
         this.strokeWidth = strokable.strokeWidth;
         this.stroke = strokable.stroke;
-        // this.yPosition = 50;
         this.path = new Path(this.registry);
+        this.constructionRegistry.addConstructionObject(this);
 
     }
 
+    position(value) {
+        this.positionVal= value;
+        return this;
+    }
+
     orientation(setting) {
-        const positionable = new Positionable().useInstanceVariableMode();
-        if (setting == "horizontal") {
-            this.position = positionable.y;
-            // this.lineArr = [[[this.startValue, this.yPosition], [this.endValue, this.yPosition]]];
-        }
-        if (setting == "vertical") {
-            this.position = positionable.x;
-            // this.lineArr = [[[this.xPosition, this.startValue], [this.xPosition, this.endValue]]];
-        }
         this.orientationVal = setting;
         return this;
     }
@@ -39,85 +35,108 @@ export default class Axis extends AbstractCanvasObject {
         return this;
     }
 
-    majorTickMark(majorTickMarkVal) {
-        let position;
-        let tickMarkArr = [];
-        if (this.yPosition >= 0 || this.yPosition < 0) {
-            position = this.yPosition;
-            this.lineArr = [[[this.startValue, this.yPosition], [this.endValue, this.yPosition]]];
-        }
-        if (this.xPosition >= 0 || this.xPosition < 0) {
-            position = this.xPosition;
-            this.lineArr = [[[this.xPosition, this.startValue], [this.xPosition, this.endValue]]];
-        }
-        this.majorTickMarkVal = majorTickMarkVal;
-        this.majorTickPixelIncrement = (this.endValue - this.startValue) / (this.upperRange - this.lowerRange) * majorTickMarkVal;
-        let i = 0;
-        while (i <= this.endValue - this.startValue) {
-            console.log("hello")
-            if (this.yPosition >= 0 || this.yPosition < 0) {
-                this.lineArr.push([[i + this.startValue, position - 4], [i + this.startValue, position + 4]]);
-            }
-            if (this.xPosition >= 0 || this.xPosition < 0) {
-                this.lineArr.push([[position - 4, i + this.startValue], [position + 4, i + this.startValue]]);
-            }
-            i += this.majorTickPixelIncrement;
-        }
-        console.log(this.lineArr)
+    tickMarkSize(sizePx) {
+        this.tickMarkSizeVal = sizePx;
+        this.minorTickSize = this.tickMarkSizeVal * 0.618;
+        return this;
+    }
 
+    gridMode() {
+        this.tickMarkSizeVal = (this.endValue - this.startValue) / 2;
+        this.minorTickSize = this.tickMarkSizeVal;
+        return this;
+    }
+
+    majorTickMark(majorTickMarkVal) {
+        this.majorTickMarkVal = majorTickMarkVal;
         return this;
     }
 
     minorTickMark(minorTickMarkVal) {
-        let position;
-        if (this.yPosition >= 0 || this.yPosition < 0) {
-            position = this.yPosition;
-        }
-        if (this.xPosition >= 0 || this.xPosition < 0) {
-            position = this.xPosition;
-        }
         this.minorTickMarkVal = minorTickMarkVal;
-        this.minorTickPixelIncrement = (this.endValue - this.startValue) / (this.upperRange - this.lowerRange) * minorTickMarkVal;
-        let i = 0;
-        while (i <= this.endValue - this.startValue) {
-            console.log("hello")
-            if (this.yPosition >= 0 || this.yPosition < 0) {
-                this.lineArr.push([[i + this.startValue, position - 2.5], [i + this.startValue, position + 2.5]]);
-            }
-            if (this.xPosition >= 0 || this.xPosition < 0) {
-                this.lineArr.push([[position - 2.5, i + this.startValue], [position + 2.5, i + this.startValue]]);
-            }
-            i += this.minorTickPixelIncrement;
-        }
-        console.log(this.lineArr)
-        this.path.points(this.lineArr).type("piecewise-linear").stroke(this.cssStrokeColor, this.strokeWidthValue);
         return this;
     }
 
     start(startValue) {
-        // if (!this.yPosition && this.yPosition != 0) {
-        //     throw ``;
-        // }
-        // if (!this.rangeCalled) {
-        //     throw `call start angle first`;
-        // }
         this.startValue = startValue;
-        this.startCalled = true;
         return this;
     }
 
     end(endValue) {
         this.endValue = endValue
-        // if (!this.startCalled) {
-        //     throw ``;
-        // }
-        // if (this.orientationVal == "horizontal") {
-
-        // }
-        // if (this.orientationVal == "vertical") {
-
-        // }
         return this;
+    }
+
+    draw() {
+
+        function majorTickMarkVal(majorTickMarkVal, dis) {
+            let position;
+            if (dis.yPosition >= 0 || dis.yPosition < 0) {
+                position = dis.yPosition;
+                dis.lineArr = [[[dis.startValue, dis.yPosition], [dis.endValue, dis.yPosition]]];
+            }
+            if (dis.xPosition >= 0 || dis.xPosition < 0) {
+                position = dis.xPosition;
+                dis.lineArr = [[[dis.xPosition, dis.startValue], [dis.xPosition, dis.endValue]]];
+            }
+            dis.majorTickMarkVal = majorTickMarkVal;
+            dis.majorTickPixelIncrement = (dis.endValue - dis.startValue) / (dis.upperRange - dis.lowerRange) * majorTickMarkVal;
+            let i = 0;
+            while (i <= dis.endValue - dis.startValue) {
+                if (dis.yPosition >= 0 || dis.yPosition < 0) {
+                    dis.lineArr.push([[i + dis.startValue, position - dis.tickMarkSizeVal], [i + dis.startValue, position + dis.tickMarkSizeVal]]);
+                }
+                if (dis.xPosition >= 0 || dis.xPosition < 0) {
+                    dis.lineArr.push([[position - dis.tickMarkSizeVal, i + dis.startValue], [position + dis.tickMarkSizeVal, i + dis.startValue]]);
+                }
+                i += dis.majorTickPixelIncrement;
+            }
+        }
+
+        function minorTickMark(minorTickMarkVal, dis) {
+            if (dis.majorTickMarkVal % minorTickMarkVal != 0) {
+                throw "minor tick mark must be a factor of major tick mark";
+            }
+            let position;
+            if (dis.yPosition >= 0 || dis.yPosition < 0) {
+                position = dis.yPosition;
+            }
+            if (dis.xPosition >= 0 || dis.xPosition < 0) {
+                position = dis.xPosition;
+            }
+            dis.minorTickMarkVal = minorTickMarkVal;
+            dis.minorTickPixelIncrement = (dis.endValue - dis.startValue) / (dis.upperRange - dis.lowerRange) * minorTickMarkVal;
+            let i = 0;
+            while (i <= dis.endValue - dis.startValue) {
+                if (dis.yPosition >= 0 || dis.yPosition < 0) {
+                    dis.lineArr.push([[i + dis.startValue, position - dis.minorTickSize], [i + dis.startValue, position + dis.minorTickSize]]);
+                }
+                if (dis.xPosition >= 0 || dis.xPosition < 0) {
+                    dis.lineArr.push([[position - dis.minorTickSize, i + dis.startValue], [position + dis.minorTickSize, i + dis.startValue]]);
+                }
+                i += dis.minorTickPixelIncrement;
+            }
+        }
+
+        const positionable = new Positionable().useInstanceVariableMode();
+        if (this.orientationVal == "horizontal") {
+            this.positionSetter = positionable.y;
+            // this.lineArr = [[[this.startValue, this.yPosition], [this.endValue, this.yPosition]]];
+        }
+        if (this.orientationVal == "vertical") {
+            this.positionSetter = positionable.x;
+            // this.lineArr = [[[this.xPosition, this.startValue], [this.xPosition, this.endValue]]];
+        }
+
+        this.positionSetter(this.positionVal);
+
+        if (this.majorTickMarkVal && !this.minorTickMarkVal) {
+            majorTickMarkVal(this.minorTickMarkVal, this);
+        } else if (this.majorTickMarkVal && this.minorTickMarkVal) {
+            majorTickMarkVal(this.majorTickMarkVal, this);
+            minorTickMark(this.minorTickMarkVal, this);
+        }
+        this.path.points(this.lineArr).type("piecewise-linear").stroke(this.cssStrokeColor, this.strokeWidthValue);
     }
 
 
