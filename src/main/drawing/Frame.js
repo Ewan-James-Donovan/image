@@ -1,7 +1,7 @@
 import Renderer from "./dom/Renderer.js";
 import Registry from "./registry/Registry.js";
 import ConstructionRegistry from "./registry/ConstructionRegistry.js";
-import Drawer from "../drawing/Drawer.js";
+import DrawingInterface from "../drawing/DrawingInterface.js";
 
 export default class Frame {
 
@@ -9,7 +9,7 @@ export default class Frame {
         this.canvas = canvas;
         this.registry = new Registry();
         this.constructionRegistry = new ConstructionRegistry();
-        this.drawer = new Drawer(this.registry, this.constructionRegistry);
+        this.drawingInterface = new DrawingInterface(this.registry, this.constructionRegistry);
         this.renderer = new Renderer(
             this.canvas.canvasParentCSSId,
             this.canvas.canvasWidth, 
@@ -25,7 +25,7 @@ export default class Frame {
         this.constructionRegistry.clear();
         this.canvas.canvasWidth = this.renderer.canvasWidthPx;
         this.canvas.canvasHeight = this.renderer.canvasHeightPx;
-        this.drawer.callFunction(func, state);
+        this.drawingInterface.callFunction(func, state);
         this.renderer.render();
     }
 

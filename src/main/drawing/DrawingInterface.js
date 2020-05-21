@@ -5,7 +5,7 @@ import Path from "../canvas-objects/simple-canvas-objects/Path.js";
 import Arc from "../canvas-objects/abstract-canvas-objects/Arc.js";
 import Axis from "../canvas-objects/abstract-canvas-objects/Axis.js";
 
-export default class Draw {
+export default class DrawingInterface {
 
     constructor(registry, constructionRegistry) {
         this.registry = registry;

@@ -6,9 +6,9 @@ import Scene from "../drawing/animation/Scene.js";
 export default class Image {
 
     createCanvas(canvasParentCSSId, canvasWidth, canvasHeight, canvasBackgroundColor) {
-        const canvas = new Canvas(canvasParentCSSId, canvasWidth, canvasHeight, canvasBackgroundColor);
-        this.frameObj = new Frame(canvas);
-        this.draw = this.frameObj.drawer;
+        this.canvas = new Canvas(canvasParentCSSId, canvasWidth, canvasHeight, canvasBackgroundColor);
+        this.frameObj = new Frame(this.canvas);
+        this.draw = this.frameObj.drawingInterface;
         this.canvasWidth = this.frameObj.renderer.canvasWidthPx;
         this.canvasHeight = this.frameObj.renderer.canvasHeightPx;
     }

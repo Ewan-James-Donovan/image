@@ -2,6 +2,7 @@ import AbstractCanvasObject from "../AbstractCanvasObject.js";
 import Strokable from "../behaviours/Strokable.js";
 import Positionable from "../behaviours/Positionable.js";
 import Path from "../simple-canvas-objects/Path.js";
+import Point2D from "../../drawing/math-constructs/Point.js";
 
 export default class Axis extends AbstractCanvasObject {
 
@@ -18,8 +19,25 @@ export default class Axis extends AbstractCanvasObject {
 
     }
 
+    getValuePosition(axisValue) {
+
+        axisValue -= this.lowerRange;
+
+        const xOrY = (this.endValue - this.startValue) /
+            (this.upperRange - this.lowerRange) *
+            axisValue +
+            this.startValue;
+
+        if (this.orientationVal == "horizontal") {
+            return new Point2D(xOrY, this.positionVal);
+        }
+
+        return new Point2D(this.positionVal, xOrY);
+
+    }
+
     position(value) {
-        this.positionVal= value;
+        this.positionVal = value;
         return this;
     }
 
