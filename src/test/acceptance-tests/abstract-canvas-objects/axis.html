@@ -5,12 +5,12 @@
     <p>Should render a grey canvas, a black horizontal axis with a circle at 10, and a white vertical axis with a circle at 5 (Side-by-side).</p>
     <div id="test"></div>
     <script type="module">
-        import Image from "../../../main/driver-code/Image.js";
-        let img = new Image();
-        img.createCanvas("test", "100px", "100px", "grey");
-        img.frame(() => {
+        import SimpleSVG from "../../../main/driver-code/SimpleSVG.js";
+        let ssvg = new SimpleSVG();
+        ssvg.createCanvas("test", "100px", "100px", "grey");
+        ssvg.frame(() => {
 
-             const verticalAxis = img.draw.axis()
+             const verticalAxis = ssvg.draw.axis()
                 .orientation("vertical")
                 .stroke("white", 1)
                 .start(25)
@@ -23,12 +23,12 @@
             
             const axisFive = verticalAxis.getValuePosition(5);
 
-            img.draw.circle()
+            ssvg.draw.circle()
                 .position(axisFive.x, axisFive.y)
                 .fill("blue")
                 .radius(3);
 
-            const horizontalAxis = img.draw.axis()
+            const horizontalAxis = ssvg.draw.axis()
                 .stroke("black", 1)
                 .tickMarkSize(6)
                 .start(10)
@@ -41,7 +41,7 @@
 
             const axisTen = horizontalAxis.getValuePosition(10);
 
-            img.draw.circle()
+            ssvg.draw.circle()
                 .position(axisTen.x, axisTen.y)
                 .fill("red")
                 .radius(3);

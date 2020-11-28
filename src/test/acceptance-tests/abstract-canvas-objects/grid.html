@@ -5,11 +5,11 @@
     <p>Should render a grey canvas, a black horizontal axis, and a white vertical axis (Side-by-side).</p>
     <div id="test"></div>
     <script type="module">
-        import Image from "../../../main/driver-code/Image.js";
-        let img = new Image();
-        img.createCanvas("test", "100px", "100px", "grey");
-        img.frame(() => {
-            img.draw.axis()
+        import SimpleSVG from "../../../main/driver-code/SimpleSVG.js";
+        let ssvg = new SimpleSVG();
+        ssvg.createCanvas("test", "100px", "100px", "grey");
+        ssvg.frame(() => {
+            ssvg.draw.axis()
                 .stroke("black", 1)
                 .tickMarkSize(6)
                 .start(20)
@@ -20,7 +20,7 @@
                 .range(-20, 20)
                 .majorTickMark(10)
                 .minorTickMark(5);
-            img.draw.axis()
+            ssvg.draw.axis()
                 .stroke("black", 1)
                 .tickMarkSize(6)
                 .start(20)

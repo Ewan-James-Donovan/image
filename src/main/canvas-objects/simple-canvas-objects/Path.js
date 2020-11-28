@@ -43,7 +43,7 @@ export default class Path extends SimpleCanvasObject {
             case "piecewise-linear":
                 return this.discontinuousPathBuilder(nestedPointArray, pathType, closedPath);
             default:
-                throw `Image: expection not defined.`;
+                throw `SimpleSVG: expection not defined.`;
         }
         let pathString = "";
         let i = 0;
@@ -67,7 +67,7 @@ export default class Path extends SimpleCanvasObject {
                 pathType = "linear";
                 break;
             default:
-                throw `Image: expection not defined.`;
+                throw `SimpleSVG: expection not defined.`;
         }
         let pathString = "";
         for (let nestedPointArray of nestedNestedPointArray) {

@@ -1,8 +1,10 @@
-# <b>IMAGE 0.0.14</b>
-## <b>I</b>nteractive <b>M</b>athematical <b>A</b>nimation <b>G</b>eneration <b>E</b>ngine
+# <b>SimpleSVG 0.1.5</b>
 
-<b>IMAGE</b> is used to simplify the dynamic creation of SVG elements inside an SVG tag on a web page while providing useful constructs for mathematical drawings. It currently facilitates the configuraton, drawing, animation, and styling of:
+- TODO: Error handling, documentation, node / react port, katex mathematical typesetting feature.
+
+<b>SimpleSVG</b> is used to simplify the dynamic creation of SVG elements inside an SVG tag on a web page while providing useful constructs for mathematical drawings. It currently facilitates the configuraton, drawing, animation, and styling of:
 - TBD
+
 ## Table of Contents
 1. [Getting Started](#Getting-Started)
 2. [Canvas](#Canvas)
@@ -16,11 +18,11 @@
 
 ## Getting Started - TBD<a name="Getting-Started"></a>
 
-To get started using IMAGE, download this repository and place the folder somewhere on your server.
+To get started using SimpleSVG, download this repository and place the folder somewhere on your server.
 After that, create a new javascript file and add the line below to it. This new file is which is where you'll configure your drawing.
 
 ```javascript
-import Image from "path/to/Image.js";
+import SimpleSVG from "path/to/SimpleSVG.js";
 ```
 Next, you need to include this new file as a module script on the page you desire to render drawings on.
 Place the code below just before the closing body tag on your desired page.
@@ -28,9 +30,9 @@ Place the code below just before the closing body tag on your desired page.
 ```html
 <script type="module" src="path/to/your/file.js"></script>
 ```
-For each canvas you make, you will need to create and instance of the imported IMAGE class. In your javascript file, include the line below.
+For each canvas you make, you will need to create and instance of the imported SimpleSVG class. In your javascript file, include the line below.
 ```javascript
-let img = new Image();
+let ssvg = new SimpleSVG();
 ```
 
 Initialising a canvas is simple. First, create a div element in your desired HTML file and give it a unique id.
@@ -42,7 +44,7 @@ Initialising a canvas is simple. First, create a div element in your desired HTM
 Now, in your javascript file, simply include the following line, swapping out width, height, unique-id, and cssColor appropriately. The colour can be changed to any valid CSS colour. Width and height must use valid CSS units.
 
 ```javascript
-img.createCanvas("unique-id", "width", "height", "cssColor");
+ssvg.createCanvas("unique-id", "width", "height", "cssColor");
 ```
 
 ## Canvas Objects - TBD<a name="Canvas-Objects"></a>
@@ -58,6 +60,6 @@ img.createCanvas("unique-id", "width", "height", "cssColor");
 ## Acceptance Tests - TBD <a name="Acceptance-Tests"></a>
 
 ## Frame Rate & Performance Tests - TBD <a name="Frame-Rate-&-Performance-Tests"></a>
-IMAGE, similar to the 'react' framework, manipulates a virtual document object model (VDOM) which yeilds a significant performance increase compared to writing repeatedly to the DOM. For instance, in previous iterations of IMAGE, a scene with 300 canvas objects would need to make 300 costly DOM manipulations, leading to sub-30 frame rates, which is the minimum to meet acceptance criteria. With the new VDOM approach, 300 non-costly manipulations to the VDOM are needed and are followed by a single costly DOM manipulation, yeilding frame rates of 50 and above. Drawing performance is limited only by pure javascript capabilites and not by calls to the DOM.
+SimpleSVG, similar to the 'react' framework, manipulates a virtual document object model (VDOM) which yeilds a significant performance increase compared to writing repeatedly to the DOM. For instance, in previous iterations of SimpleSVG, a scene with 300 canvas objects would need to make 300 costly DOM manipulations, leading to sub-30 frame rates, which is the minimum to meet acceptance criteria. With the new VDOM approach, 300 non-costly manipulations to the VDOM are needed and are followed by a single costly DOM manipulation, yeilding frame rates of 50 and above. Drawing performance is limited only by pure javascript capabilites and not by calls to the DOM.
 
-`No tests as of version 0.0.4`
+`No tests as of version 0.1.5`

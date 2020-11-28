@@ -3,37 +3,37 @@
 
 <head>
     <script type="module">
-        import Image from "../../../main/driver-code/Image.js";
-        let img = new Image();
-        img.createCanvas("test", "100px", "100px", "grey");
-        img.animate({ desiredFrameRate: 60, logFrameRate: true }, state => {
-            img.scene(state, 2000, 4000, state => {
-                img.draw.rectangle()
-                    .position(state.frame % (img.canvasWidth + 25) - 25, (img.canvasHeight / 8) * 2 - 10)
+        import SimpleSVG from "../../../main/driver-code/SimpleSVG.js";
+        let ssvg = new SimpleSVG();
+        ssvg.createCanvas("test", "100px", "100px", "grey");
+        ssvg.animate({ desiredFrameRate: 60, logFrameRate: true }, state => {
+            ssvg.scene(state, 2000, 4000, state => {
+                ssvg.draw.rectangle()
+                    .position(state.frame % (ssvg.canvasWidth + 25) - 25, (ssvg.canvasHeight / 8) * 2 - 10)
                     .size(20, 20)
                     .fill("red")
                     .stroke("black", 2);
-                img.draw.rectangle()
-                    .position((state.frame / 2) % (img.canvasWidth + 25) - 25, (img.canvasHeight / 8) * 4 - 10)
+                ssvg.draw.rectangle()
+                    .position((state.frame / 2) % (ssvg.canvasWidth + 25) - 25, (ssvg.canvasHeight / 8) * 4 - 10)
                     .size(20, 20)
                     .fill("blue")
                     .stroke("black", 2);
-                img.draw.rectangle()
-                    .position((state.frame / 4) % (img.canvasWidth + 25) - 25, (img.canvasHeight / 8) * 6 - 10)
+                ssvg.draw.rectangle()
+                    .position((state.frame / 4) % (ssvg.canvasWidth + 25) - 25, (ssvg.canvasHeight / 8) * 6 - 10)
                     .size(20, 20)
                     .fill("lime")
                     .stroke("black", 2);
             });
-            img.scene(state, 0, 2000, state => {
-                img.draw.rectangle()
-                    .position(state.frame * 5 % (img.canvasWidth + 25) - 25, (img.canvasHeight / 2) - 10)
+            ssvg.scene(state, 0, 2000, state => {
+                ssvg.draw.rectangle()
+                    .position(state.frame * 5 % (ssvg.canvasWidth + 25) - 25, (ssvg.canvasHeight / 2) - 10)
                     .size(20, 20)
                     .fill("red")
                     .stroke("black", 2);
             });
-            img.scene(state, 4000, state => {
-                img.draw.circle()
-                    .position(state.frame % (img.canvasWidth + 25) - 12.5, img.canvasHeight / 2)
+            ssvg.scene(state, 4000, state => {
+                ssvg.draw.circle()
+                    .position(state.frame % (ssvg.canvasWidth + 25) - 12.5, ssvg.canvasHeight / 2)
                     .radius(10)
                     .fill("blue")
                     .stroke("black", 2);

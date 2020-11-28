@@ -1,5 +1,3 @@
-// import ErrorHandler from "../error-handling/ErrorHandler.js";
-
 export default class Fillable {
 
     useInstanceVariableMode() {

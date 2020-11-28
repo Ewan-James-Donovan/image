@@ -3,7 +3,7 @@ import Frame from "../drawing/Frame.js";
 import Canvas from "../drawing/Canvas.js";
 import Scene from "../drawing/animation/Scene.js";
 
-export default class Image {
+export default class SimpleSVG {
 
     createCanvas(canvasParentCSSId, canvasWidth, canvasHeight, canvasBackgroundColor) {
         this.canvas = new Canvas(canvasParentCSSId, canvasWidth, canvasHeight, canvasBackgroundColor);

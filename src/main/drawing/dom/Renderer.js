@@ -25,7 +25,6 @@ export default class Renderer {
             .getBoundingClientRect();
         this.canvasWidthPx = boundingClientRect.width;
         this.canvasHeightPx = boundingClientRect.height;
-        // Clears automatically due to assignment.
         this.parentElement.innerHTML = SVGBuilder.build(this.registry, this.constructionRegistry);
     }
 

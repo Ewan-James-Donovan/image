@@ -139,11 +139,9 @@ export default class Axis extends AbstractCanvasObject {
         const positionable = new Positionable().useInstanceVariableMode();
         if (this.orientationVal == "horizontal") {
             this.positionSetter = positionable.y;
-            // this.lineArr = [[[this.startValue, this.yPosition], [this.endValue, this.yPosition]]];
         }
         if (this.orientationVal == "vertical") {
             this.positionSetter = positionable.x;
-            // this.lineArr = [[[this.xPosition, this.startValue], [this.xPosition, this.endValue]]];
         }
 
         this.positionSetter(this.positionVal);

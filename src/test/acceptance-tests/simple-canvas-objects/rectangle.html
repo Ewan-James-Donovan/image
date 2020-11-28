@@ -3,12 +3,12 @@
 
 <head>
     <script type="module">
-        import Image from "../../../main/driver-code/Image.js";
-        let img = new Image();
-        img.createCanvas("test", "100px", "100px", "grey");
-        img.frame(() => {
-            img.draw.rectangle()
-                .position(img.canvasWidth / 2 - 10, img.canvasHeight / 2 - 10)
+        import SimpleSVG from "../../../main/driver-code/SimpleSVG.js";
+        let ssvg = new SimpleSVG();
+        ssvg.createCanvas("test", "100px", "100px", "grey");
+        ssvg.frame(() => {
+            ssvg.draw.rectangle()
+                .position(ssvg.canvasWidth / 2 - 10, ssvg.canvasHeight / 2 - 10)
                 .size(20, 20)
                 .fill("red")
                 .stroke("black", 2);

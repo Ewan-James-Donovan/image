@@ -1,4 +1,3 @@
-// import ErrorHandler from "../../error-handling/ErrorHandler.js";
 import Attribute from "./Attribute.js";
 
 export default class Tag {
@@ -9,18 +8,14 @@ export default class Tag {
     }
 
     setTagName(tagName) {
-        // ErrorHandler.checkType(tagName, "string");
         this.tagName = tagName;
     }
 
     addAttribute(name, value) {
-        // ErrorHandler.checkType(name, "string");
-        // ErrorHandler.checkType(value, "string");
         this.attributes.push(new Attribute(name, value));
     }
 
     addChild(childString) {
-        // ErrorHandler.checkType(childString, "string");
         this.children.push(childString);
     }
 
