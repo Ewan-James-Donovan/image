@@ -4,6 +4,7 @@ import Line from "../canvas-objects/simple-canvas-objects/Line.js";
 import Path from "../canvas-objects/simple-canvas-objects/Path.js";
 import Arc from "../canvas-objects/abstract-canvas-objects/Arc.js";
 import Axis from "../canvas-objects/abstract-canvas-objects/Axis.js";
+import Polygon from "../canvas-objects/abstract-canvas-objects/Polygon.js";
 
 export default class DrawingInterface {
 
@@ -37,6 +38,10 @@ export default class DrawingInterface {
 
     arc() {
         return new Arc(this.registry);
+    }
+
+    polygon() {
+        return new Polygon(this.registry);
     }
 
     axis() {

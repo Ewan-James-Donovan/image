@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<body style="margin: 0;">
+    <p>Should render a grey canvas and a blue hexagon.</p>
+    <div id="test"></div>
+    <script type="module">
+        import SimpleSVG from "../../../main/driver-code/SimpleSVG.js";
+        let ssvg = new SimpleSVG();
+        ssvg.createCanvas("test", "100px", "100px", "grey");
+        ssvg.frame(() => {
+            ssvg.draw.polygon()
+                .position(ssvg.canvasWidth / 2, ssvg.canvasHeight / 2)
+                .stroke("blue", 2)
+                .radius(30)
+                .sides(6)
+                // .rotate((2 * Math.PI) /4)
+                
+                
+        });
+    </script>
+</body>
+
+</html>
