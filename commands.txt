@@ -1,4 +1,3 @@
 useful commands
 
-browserify src/test/demos/circle/circle.ts 
--p [ tsify --noImplicitAny] > src/test/demos/circle/circle.js
+browserify src/test/demos/circle/circle.ts -p [ tsify --noImplicitAny] > src/test/demos/circle/circle.js
