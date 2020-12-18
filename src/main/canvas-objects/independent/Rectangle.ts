@@ -8,6 +8,7 @@ import Dimensions from "../interfaces/Dimensions";
 
 export default class Rectangle extends CanvasObject implements Dimensions, Position, Fill, Stroke {
 
+    private cornerRadius: string;
     private widthValue: string;
     private heightValue: string;
     private xValue: string;
@@ -19,6 +20,11 @@ export default class Rectangle extends CanvasObject implements Dimensions, Posit
     private lineCapType: string;
     private dashArray: string;
     private strokeOpacityValue: string;
+
+    public roundCorners(cornerRadius: string): Rectangle {
+        this.cornerRadius = cornerRadius;
+        return this;
+    }
 
     // @Override
     public prepareForBuild(): void {
@@ -35,6 +41,8 @@ export default class Rectangle extends CanvasObject implements Dimensions, Posit
                 .addAttribute(new Attribute("stroke-linecap", this.lineCapType))
                 .addAttribute(new Attribute("stroke-dasharray", this.dashArray))
                 .addAttribute(new Attribute("stroke-opacity", this.strokeOpacityValue))
+                .addAttribute(new Attribute("rx", this.cornerRadius))
+                .addAttribute(new Attribute("ry", this.cornerRadius))
         );
     }
     

@@ -16,6 +16,7 @@ canvas.rectangle()
     .strokeWidth("10px")
     .dash("30,30,50,50")
     .fillOpacity("50%")
-    .strokeOpacity("50%");
+    .strokeOpacity("50%")
+    .roundCorners("20px");
 
 canvas.render();

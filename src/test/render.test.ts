@@ -38,8 +38,9 @@ describe('Rectangle', function () {
             .strokeWidth("2px")
             .dash("1, 3, 5, 9")
             .fillOpacity("50%")
-            .strokeOpacity("70%");
-        expect(canvas.render(true)).toBe("<svg style=\"width: 100%; height: 100%;\"><rect width=\"100px\" height=\"75px\" x=\"5px\" y=\"9px\" fill=\"red\" fill-opacity=\"50%\" stroke=\"green\" stroke-width=\"2px\" stroke-linecap=\"square\" stroke-dasharray=\"1, 3, 5, 9\" stroke-opacity=\"70%\"></rect></svg>");
+            .strokeOpacity("70%")
+            .roundCorners("2px");
+        expect(canvas.render(true)).toBe("<svg style=\"width: 100%; height: 100%;\"><rect width=\"100px\" height=\"75px\" x=\"5px\" y=\"9px\" fill=\"red\" fill-opacity=\"50%\" stroke=\"green\" stroke-width=\"2px\" stroke-linecap=\"square\" stroke-dasharray=\"1, 3, 5, 9\" stroke-opacity=\"70%\" rx=\"2px\" ry=\"2px\"></rect></svg>")
     });
 
     it('should not render if it has no attributes', function () {
@@ -61,7 +62,7 @@ describe('Line', function () {
             .strokeWidth("2px")
             .dash("1, 3, 5, 9")
             .strokeOpacity("70%");
-        expect(canvas.render(true)).toBe("<svg style=\"width: 100%; height: 100%;\"><Line x1=\"5px\" x2=\"11px\" y1=\"2px\" y2=\"15px\" stroke=\"green\" stroke-width=\"2px\" stroke-linecap=\"square\" stroke-dasharray=\"1, 3, 5, 9\" stroke-opacity=\"70%\"></Line></svg>");
+        expect(canvas.render(true)).toBe("<svg style=\"width: 100%; height: 100%;\"><line x1=\"5px\" x2=\"11px\" y1=\"2px\" y2=\"15px\" stroke=\"green\" stroke-width=\"2px\" stroke-linecap=\"square\" stroke-dasharray=\"1, 3, 5, 9\" stroke-opacity=\"70%\"></line></svg>");
     });
     
     it('should not render if it has no attributes', function () {
