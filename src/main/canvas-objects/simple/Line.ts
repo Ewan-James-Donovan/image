@@ -56,7 +56,7 @@ export default class Line extends CanvasObject implements Stroke {
     // @Override
     public prepareForBuild(): void {
         this.addTag(
-            new Tag("Line")
+            new Tag("line")
                 .addAttribute(new Attribute("x1", this.x1Value))
                 .addAttribute(new Attribute("x2", this.x2Value))
                 .addAttribute(new Attribute("y1", this.y1Value))
