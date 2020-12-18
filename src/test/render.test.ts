@@ -1,31 +1,26 @@
 import SVGCanvas from "../main/SVGCanvas";
 
-describe('CanvasObjects are rendered as html', function() {
-    it('renders a circle with a tag and attributes', function() {
-        const canvas : SVGCanvas = new SVGCanvas("some-id");
+describe('circle', function () {
 
-        canvas.circle()
-            .radius("3px")
-            .x("4px")
-            .y("6px");
-
-        expect(canvas.render(true)).toBe("<svg><circle r=\"3px\" cx=\"4px\" cy=\"6px\"></circle></svg>");
-
+    it('should render with a tag and attributes', function () {
+        const canvas: SVGCanvas = new SVGCanvas("some-id");
         canvas.circle()
             .radius("6px")
             .position("5px", "9px")
-
-        expect(canvas.render(true)).toBe("<svg><circle r=\"6px\" cx=\"5px\" cy=\"9px\"></circle></svg>");
-
-        canvas.circle();
-        
-        expect(canvas.render(true)).toBe("<svg><circle r=\"0px\" cx=\"0px\" cy=\"0px\"></circle></svg>");
-
-        canvas.circle()
-        .radius("6px")
-        .position("5px", "9px")
-        .fill("red")
-
-        expect(canvas.render(true)).toBe("<svg><circle r=\"6px\" cx=\"5px\" cy=\"9px\" fill=\"red\"></circle></svg>");
+            .fill("red")
+            .lineCap("square")
+            .stroke("green")
+            .strokeWidth("2px")
+            .dash("1, 3, 5, 9")
+            .fillOpacity("50%")
+            .strokeOpacity("70%");
+        expect(canvas.render(true)).toBe("<svg style=\"width: 100%; height: 100%;\"><circle r=\"6px\" cx=\"5px\" cy=\"9px\" fill=\"red\" fill-opacity=\"50%\" stroke=\"green\" stroke-width=\"2px\" stroke-linecap=\"square\" stroke-dasharray=\"1, 3, 5, 9\" stroke-opacity=\"70%\"></circle></svg>");
     });
+
+    it('should not render if it has no attributes', function () {
+        const canvas: SVGCanvas = new SVGCanvas("some-id");
+        canvas.circle();
+        expect(canvas.render(true)).toBe("<svg style=\"width: 100%; height: 100%;\"></svg>");
+    });
+
 });

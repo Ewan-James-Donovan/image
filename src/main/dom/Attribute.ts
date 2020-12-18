@@ -1,18 +1,18 @@
 export default class Attribute {
 
-    private key : string;
-    private value : string;
+    private key: string;
+    private value: string;
 
-    constructor(key : string, value : string) {
+    constructor(key: string, value: string) {
         this.key = key;
         this.value = value;
     }
 
-    public getKey() : string {
+    public getKey(): string {
         return `${this.key}`;
     }
 
-    public getValue() : string {
+    public getValue(): string {
         return `${this.value}`;
     }
 

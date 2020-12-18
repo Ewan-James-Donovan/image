@@ -4,20 +4,20 @@ import SVGBuilder from "./dom/SVGBuilder";
 
 export default class SVGCanvas {
 
-    private containerElementId : string;
-    private registry : Array<CanvasObject> = new Array<CanvasObject>();
+    private containerElementId: string;
+    private registry: Array<CanvasObject> = new Array<CanvasObject>();
 
-    constructor(containerElementId : string) {
+    constructor(containerElementId: string) {
         this.containerElementId = containerElementId;
     }
 
-    private register<T extends CanvasObject>(canvasObject : T) : T {
+    private register<T extends CanvasObject>(canvasObject: T): T {
         this.registry.push(canvasObject);
         return canvasObject;
     }
 
     public render(testMode = false) {
-        const html : string = SVGBuilder.buildFromRegistry(this.registry);
+        const html: string = SVGBuilder.buildFromRegistry(this.registry);
         if (!testMode) {
             try {
                 document.getElementById(this.containerElementId).innerHTML = html;
@@ -29,7 +29,7 @@ export default class SVGCanvas {
         return html;
     }
 
-    public circle() : Circle {
+    public circle(): Circle {
         return this.register(new Circle());
     }
 

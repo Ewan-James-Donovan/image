@@ -2,9 +2,9 @@ import Tag from "../dom/Tag";
 
 export default abstract class CanvasObject {
 
-    private tags : Array<Tag> = new Array<Tag>();
+    private tags: Array<Tag> = new Array<Tag>();
 
-    protected addTag(tag : Tag) : void {
+    protected addTag(tag: Tag): void {
         this.tags.push(tag);
     }
 
@@ -12,6 +12,6 @@ export default abstract class CanvasObject {
         return [...this.tags];
     }
 
-    public abstract prepareForBuild() : void;
+    public abstract prepareForBuild(): void;
 
 }
