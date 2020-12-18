@@ -1,8 +1,8 @@
 import SVGBuilder from "./dom/SVGBuilder";
 import CanvasObject from "./canvas-objects/CanvasObject";
-import Circle from "./canvas-objects/simple/Circle";
-import Rectangle from "./canvas-objects/simple/Rectangle";
-import Line from "./canvas-objects/simple/Line";
+import Circle from "./canvas-objects/independent/Circle";
+import Rectangle from "./canvas-objects/independent/Rectangle";
+import Line from "./canvas-objects/independent/Line";
 import DrawingInterface from "./DrawingInterface";
 
 export default class SVGCanvas implements DrawingInterface {
