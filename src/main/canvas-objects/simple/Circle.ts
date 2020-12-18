@@ -61,7 +61,6 @@ export default class Circle extends CanvasObject implements RadiusDefinable, Pos
         return this;
     }
 
-
     // @Override
     public fill(fillValue: string): Circle {
         this.fillValue = fillValue;
