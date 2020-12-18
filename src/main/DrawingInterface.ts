@@ -1,5 +1,6 @@
 import Circle from "./canvas-objects/independent/Circle";
 import Line from "./canvas-objects/independent/Line";
+import Path from "./canvas-objects/independent/Path";
 import Rectangle from "./canvas-objects/independent/Rectangle";
 
 export default interface DrawingInterface {
@@ -7,7 +8,8 @@ export default interface DrawingInterface {
     circle(): Circle;
     rectangle(): Rectangle;
     line(): Line;
-    // path(): Path;
+    path(): Path;
+    // text(): Text // independent
     // polygon(): Polygon // dependent;
     // triangle(): Triangle; // extends Polygon dependent
     // square(): Square; // extends Polygon dependent
@@ -18,7 +20,6 @@ export default interface DrawingInterface {
     // axes(): Axes; // dependent
     // grid(): Grid; // dependent
     // arc(): Arc; // dependent
-    // text(): Text // independent
     // graph(): Graph // dependent
     // spline(cubic, etc): Spline // dependent
     // bezier(1, 2 (points lol) ): Bezier // dependent

@@ -3,6 +3,7 @@ import CanvasObject from "./canvas-objects/CanvasObject";
 import Circle from "./canvas-objects/independent/Circle";
 import Rectangle from "./canvas-objects/independent/Rectangle";
 import Line from "./canvas-objects/independent/Line";
+import Path from "./canvas-objects/independent/Path";
 import DrawingInterface from "./DrawingInterface";
 
 export default class SVGCanvas implements DrawingInterface {
@@ -45,6 +46,11 @@ export default class SVGCanvas implements DrawingInterface {
     // @Override
     public line(): Line {
         return this.register(new Line());
+    }
+
+    // @Override
+    public path(): Path {
+        return this.register(new Path());
     }
 
 }

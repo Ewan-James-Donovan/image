@@ -15,6 +15,22 @@ export default class Line extends CanvasObject implements Stroke {
     private dashArray: string;
     private strokeOpacityValue: string;
 
+    // @Override
+    public prepareForBuild(): void {
+        this.addTag(
+            new Tag("line")
+                .addAttribute(new Attribute("x1", this.x1Value))
+                .addAttribute(new Attribute("x2", this.x2Value))
+                .addAttribute(new Attribute("y1", this.y1Value))
+                .addAttribute(new Attribute("y2", this.y2Value))
+                .addAttribute(new Attribute("stroke", this.strokeColor))
+                .addAttribute(new Attribute("stroke-width", this.strokeWidthValue))
+                .addAttribute(new Attribute("stroke-linecap", this.lineCapType))
+                .addAttribute(new Attribute("stroke-dasharray", this.dashArray))
+                .addAttribute(new Attribute("stroke-opacity", this.strokeOpacityValue))
+        );
+    }
+
     public x1(x1Value: string): Line {
         this.x1Value = x1Value;
         return this;
@@ -51,22 +67,6 @@ export default class Line extends CanvasObject implements Stroke {
         this.point1(x1Value, y1Value);
         this.point2(x2Value, y2Value);
         return this;
-    }
-
-    // @Override
-    public prepareForBuild(): void {
-        this.addTag(
-            new Tag("line")
-                .addAttribute(new Attribute("x1", this.x1Value))
-                .addAttribute(new Attribute("x2", this.x2Value))
-                .addAttribute(new Attribute("y1", this.y1Value))
-                .addAttribute(new Attribute("y2", this.y2Value))
-                .addAttribute(new Attribute("stroke", this.strokeColor))
-                .addAttribute(new Attribute("stroke-width", this.strokeWidthValue))
-                .addAttribute(new Attribute("stroke-linecap", this.lineCapType))
-                .addAttribute(new Attribute("stroke-dasharray", this.dashArray))
-                .addAttribute(new Attribute("stroke-opacity", this.strokeOpacityValue))
-        );
     }
 
     // @Override

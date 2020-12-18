@@ -21,11 +21,6 @@ export default class Rectangle extends CanvasObject implements Dimensions, Posit
     private dashArray: string;
     private strokeOpacityValue: string;
 
-    public roundCorners(cornerRadius: string): Rectangle {
-        this.cornerRadius = cornerRadius;
-        return this;
-    }
-
     // @Override
     public prepareForBuild(): void {
         this.addTag(
@@ -44,6 +39,11 @@ export default class Rectangle extends CanvasObject implements Dimensions, Posit
                 .addAttribute(new Attribute("rx", this.cornerRadius))
                 .addAttribute(new Attribute("ry", this.cornerRadius))
         );
+    }
+
+    public roundCorners(cornerRadius: string): Rectangle {
+        this.cornerRadius = cornerRadius;
+        return this;
     }
     
     // @Override
