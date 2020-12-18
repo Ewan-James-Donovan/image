@@ -3,12 +3,14 @@ import Attribute from "../../dom/Attribute";
 import CanvasObject from "../CanvasObject";
 import RadiusDefinable from "../interfaces/RadiusDefinable";
 import Positionable from "../interfaces/Positionable";
+import Fillable from "../interfaces/Fillable";
 
-export default class Circle extends CanvasObject implements RadiusDefinable, Positionable {
+export default class Circle extends CanvasObject implements RadiusDefinable, Positionable, Fillable {
 
     private radiusValue : string;
     private xValue : string;
     private yValue : string;
+    private fillValue : string;
 
     // @Override
     public radius(radiusValue : string) : Circle {
@@ -35,6 +37,14 @@ export default class Circle extends CanvasObject implements RadiusDefinable, Pos
         return this;
     }
 
+
+    // @Override
+    fill(fillValue : string) : Circle {
+        this.fillValue = fillValue;
+        return this;
+    }
+
+
     // @Override
     public prepareForBuild() : void {
         this.addTag(
@@ -42,6 +52,7 @@ export default class Circle extends CanvasObject implements RadiusDefinable, Pos
             .addAttribute(new Attribute("r", this.radiusValue || "0px"))
             .addAttribute(new Attribute("cx", this.xValue || "0px"))
             .addAttribute(new Attribute("cy", this.yValue || "0px"))
+            .addAttribute(new Attribute("fill", this.fillValue))
         );
     }
 

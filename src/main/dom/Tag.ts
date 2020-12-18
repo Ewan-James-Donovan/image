@@ -10,7 +10,9 @@ export default class Tag {
     }
 
     public addAttribute(attribute : Attribute) : Tag {
-        this.attributes.push(attribute);
+        if (attribute.getValue() != "undefined") {
+            this.attributes.push(attribute);
+        }
         return this;
     }
 

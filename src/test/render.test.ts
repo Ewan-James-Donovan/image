@@ -20,5 +20,12 @@ describe('CanvasObjects are rendered as html', function() {
         canvas.circle();
         
         expect(canvas.render(true)).toBe("<svg><circle r=\"0px\" cx=\"0px\" cy=\"0px\"></circle></svg>");
+
+        canvas.circle()
+        .radius("6px")
+        .position("5px", "9px")
+        .fill("red")
+
+        expect(canvas.render(true)).toBe("<svg><circle r=\"6px\" cx=\"5px\" cy=\"9px\" fill=\"red\"></circle></svg>");
     });
 });
