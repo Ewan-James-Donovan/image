@@ -2,8 +2,9 @@ import Tag from "../../dom/Tag";
 import Attribute from "../../dom/Attribute";
 import CanvasObject from "../CanvasObject";
 import Stroke from "../interfaces/Stroke";
+import Fill from "../interfaces/Fill";
 
-export default class Path extends CanvasObject implements Stroke {
+export default class Path extends CanvasObject implements Stroke, Fill {
 
     private pathString: string;
     private strokeColor: string;
@@ -11,6 +12,8 @@ export default class Path extends CanvasObject implements Stroke {
     private lineCapType: string;
     private dashArray: string;
     private strokeOpacityValue: string;
+    private fillValue: string;
+    private fillOpacityValue: string;
 
     // @Override
     public prepareForBuild(): void {
@@ -22,6 +25,8 @@ export default class Path extends CanvasObject implements Stroke {
                 .addAttribute(new Attribute("stroke-linecap", this.lineCapType))
                 .addAttribute(new Attribute("stroke-dasharray", this.dashArray))
                 .addAttribute(new Attribute("stroke-opacity", this.strokeOpacityValue))
+                .addAttribute(new Attribute("fill", this.fillValue))
+                .addAttribute(new Attribute("fill-opacity", this.fillOpacityValue))
         );
     }
 
@@ -38,6 +43,18 @@ export default class Path extends CanvasObject implements Stroke {
         return this;
     }
 
+    // @Override
+    public fill(fillValue: string): Path {
+        this.fillValue = fillValue;
+        return this;
+    }
+
+    // @Override
+    public fillOpacity(fillOpacityValue: string): Path {
+        this.fillOpacityValue = fillOpacityValue;
+        return this;
+    };
+    
     // @Override
     public stroke(strokeColor: string): Path {
         this.strokeColor = strokeColor;
