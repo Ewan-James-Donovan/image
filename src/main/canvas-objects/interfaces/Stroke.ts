@@ -1,6 +1,6 @@
 import CanvasObject from "../CanvasObject";
 
-export default interface Strokable {
+export default interface Stroke {
 
     stroke(strokeColor: string): CanvasObject;
     strokeWidth(strokeWidthValue: string): CanvasObject;

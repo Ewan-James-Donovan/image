@@ -1,6 +1,6 @@
 import CanvasObject from "../CanvasObject";
 
-export default interface Positionable {
+export default interface Position {
 
     x(x : string) : CanvasObject;
     y(x : string) : CanvasObject;

@@ -1,5 +1,6 @@
 import CanvasObject from "./canvas-objects/CanvasObject";
 import Circle from "./canvas-objects/simple/Circle";
+import Rectangle from "./canvas-objects/simple/Rectangle";
 import SVGBuilder from "./dom/SVGBuilder";
 
 export default class SVGCanvas {
@@ -31,6 +32,10 @@ export default class SVGCanvas {
 
     public circle(): Circle {
         return this.register(new Circle());
+    }
+
+    public rectangle(): Rectangle {
+        return this.register(new Rectangle());
     }
 
 }
