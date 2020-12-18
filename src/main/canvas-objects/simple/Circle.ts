@@ -19,19 +19,19 @@ export default class Circle extends CanvasObject implements RadiusDefinable, Pos
     }
 
     // @Override
-    x(x : string) : Circle {
+    public x(x : string) : Circle {
         this.xValue = x;
         return this;
     }
 
     // @Override
-    y(y : string) : Circle {
+    public y(y : string) : Circle {
         this.yValue = y;
         return this;
     }
 
     // @Override
-    position(x : string, y : string) : Circle {
+    public position(x : string, y : string) : Circle {
         this.x(x);
         this.y(y);
         return this;
@@ -39,7 +39,7 @@ export default class Circle extends CanvasObject implements RadiusDefinable, Pos
 
 
     // @Override
-    fill(fillValue : string) : Circle {
+    public fill(fillValue : string) : Circle {
         this.fillValue = fillValue;
         return this;
     }
