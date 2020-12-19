@@ -22,18 +22,21 @@ export default class Polygon extends Path implements Radius, Position, Rotate {
     // @Override
     public prepareForBuild(): void {
         this.calculatePoints();
-        let pathString: string = "M ";
-        let firstElement: boolean = true;
-        for (const pointArray of this.nestedPointArray) {
-            if (firstElement) {
-                pathString += + pointArray[0].toString() + " " + pointArray[1].toString();
-                firstElement = false;
+        let pathString: string;
+        if (this.nestedPointArray.length) {
+            pathString = "M ";
+            let firstElement: boolean = true;
+            for (const pointArray of this.nestedPointArray) {
+                if (firstElement) {
+                    pathString += + pointArray[0].toString() + " " + pointArray[1].toString();
+                    firstElement = false;
+                }
+                pathString += " L " + pointArray[0].toString() + " " + pointArray[1].toString();
             }
-            pathString += " L " + pointArray[0].toString() + " " + pointArray[1].toString();
         }
         this.addTag(
             new Tag("path")
-                .addAttribute(new Attribute("d", pathString))
+                .addAttribute(new Attribute("d", pathString == "M " ? null : pathString))
                 .addAttribute(new Attribute("stroke", this.strokeColor))
                 .addAttribute(new Attribute("stroke-width", this.strokeWidthValue))
                 .addAttribute(new Attribute("stroke-linecap", this.lineCapType))
@@ -55,7 +58,7 @@ export default class Polygon extends Path implements Radius, Position, Rotate {
     }
 
     // @Override
-    rotate(radiansToRotate: number): Polygon {
+    public rotate(radiansToRotate: number): Polygon {
         this.radiansToRotate = radiansToRotate;
         return this;
     }

@@ -6,6 +6,11 @@ import Line from "./canvas-objects/independent/Line";
 import Path from "./canvas-objects/independent/Path";
 import DrawingInterface from "./DrawingInterface";
 import Polygon from "./canvas-objects/dependent/Polygon";
+import Triangle from "./canvas-objects/dependent/Triangle";
+import Square from "./canvas-objects/dependent/Square";
+import Pentagon from "./canvas-objects/dependent/Pentagon";
+import Hexagon from "./canvas-objects/dependent/Hexagon";
+import Octagon from "./canvas-objects/dependent/Octagon";
 
 export default class SVGCanvas implements DrawingInterface {
 
@@ -57,6 +62,31 @@ export default class SVGCanvas implements DrawingInterface {
     // @Override
     public polygon(): Polygon {
         return this.register(new Polygon());
+    }
+
+    // @Override
+    public triangle(): Triangle {
+        return this.register(new Triangle());
+    }
+
+    // @Override
+    public square(): Square {
+        return this.register(new Square());
+    }
+
+    // @Override
+    public pentagon(): Pentagon {
+        return this.register(new Pentagon());
+    }
+
+    // @Override
+    public hexagon(): Hexagon {
+        return this.register(new Hexagon());
+    }
+
+    // @Override
+    public octagon(): Octagon {
+        return this.register(new Octagon());
     }
 
 }
