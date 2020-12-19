@@ -2,8 +2,8 @@ import CanvasObject from "../CanvasObject";
 
 export default interface Position {
 
-    x(x : string) : CanvasObject;
-    y(x : string) : CanvasObject;
-    position(x : string, y : string) : CanvasObject;
+    x(x : string | number) : CanvasObject;
+    y(x : string | number) : CanvasObject;
+    position(x : string | number, y : string | number) : CanvasObject;
 
 }
