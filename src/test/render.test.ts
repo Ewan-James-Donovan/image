@@ -90,7 +90,7 @@ describe('Path', function () {
             .strokeOpacity("70%")
             .fill("lime")
             .fillOpacity("30%");
-        expect(canvas.render(true)).toBe("<svg style=\"width: 100%; height: 100%;\"><path d=\"M 50 50L 50 50L 300 300L 590 590\" stroke=\"green\" stroke-width=\"2px\" stroke-linecap=\"square\" stroke-dasharray=\"1, 3, 5, 9\" stroke-opacity=\"70%\" fill=\"lime\" fill-opacity=\"30%\"></path></svg>")
+        expect(canvas.render(true)).toBe("<svg style=\"width: 100%; height: 100%;\"><path d=\"M 50 50 L 50 50 L 300 300 L 590 590\" stroke=\"green\" stroke-width=\"2px\" stroke-linecap=\"square\" stroke-dasharray=\"1, 3, 5, 9\" stroke-opacity=\"70%\" fill=\"lime\" fill-opacity=\"30%\"></path></svg>")
     });
     
     it('should not render if it has no attributes', function () {
@@ -117,7 +117,7 @@ describe('Polygon', function () {
             .strokeOpacity("70%")
             .fill("lime")
             .fillOpacity("30%");
-        expect(canvas.render(true)).toBe("<svg style=\"width: 100%; height: 100%;\"><path d=\"M 50 50 L 50 50 L 300 300 L 590 590\" stroke=\"green\" stroke-width=\"2px\" stroke-linecap=\"square\" stroke-dasharray=\"1, 3, 5, 9\" stroke-opacity=\"70%\" fill=\"lime\" fill-opacity=\"30%\"></path></svg>")
+        expect(canvas.render(true)).toBe("<svg style=\"width: 100%; height: 100%;\"><path d=\"M 415.10565162951536 350.90169943749476 L 415.10565162951536 350.90169943749476 L 320 420 L 224.89434837048464 350.90169943749476 L 261.2214747707527 239.09830056250527 L 378.7785252292473 239.09830056250524 L 415.10565162951536 350.9016994374947\" stroke=\"green\" stroke-width=\"2px\" stroke-linecap=\"square\" stroke-dasharray=\"1, 3, 5, 9\" stroke-opacity=\"70%\" fill=\"lime\" fill-opacity=\"30%\"></path></svg>")
     });
     
     it('should not render if it has no attributes', function () {
