@@ -1,6 +1,6 @@
 {
   "name": "svg-canvas",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "powerful drawing tool for svg elements",
   "main": "index.js",
   "scripts": {
