@@ -6,7 +6,7 @@ import Fill from "../interfaces/Fill";
 
 export default class Path extends CanvasObject implements Stroke, Fill {
 
-    protected pathString: string;
+    private pathString: string;
     protected strokeColor: string;
     protected strokeWidthValue: string;
     protected lineCapType: string;

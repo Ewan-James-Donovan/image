@@ -17,12 +17,10 @@ export default class Polygon extends Path implements Radius, Position, Rotate {
     constructor() {
         super();
         this.points = undefined;
-        this.pathString = undefined;
     }
 
     // @Override
     public prepareForBuild(): void {
-        // super.points() ???
         this.calculatePoints();
         let pathString: string = "M ";
         let firstElement: boolean = true;
