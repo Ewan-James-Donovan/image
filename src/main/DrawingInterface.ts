@@ -3,6 +3,11 @@ import Rectangle from "./canvas-objects/independent/Rectangle";
 import Line from "./canvas-objects/independent/Line";
 import Path from "./canvas-objects/independent/Path";
 import Polygon from "./canvas-objects/dependent/Polygon";
+import Triangle from "./canvas-objects/dependent/Triangle";
+import Square from "./canvas-objects/dependent/Square";
+import Pentagon from "./canvas-objects/dependent/Pentagon";
+import Hexagon from "./canvas-objects/dependent/Hexagon";
+import Octagon from "./canvas-objects/dependent/Octagon";
 
 export default interface DrawingInterface {
 
@@ -10,14 +15,13 @@ export default interface DrawingInterface {
     rectangle(): Rectangle;
     line(): Line;
     path(): Path;
-    polygon(): Polygon; // dependent;
-    
+    polygon(): Polygon;
+    triangle(): Triangle;
+    square(): Square;
+    pentagon(): Pentagon;
+    hexagon(): Hexagon;
+    octagon(): Octagon;
     // text(): Text // independent
-    // triangle(): Triangle; // extends Polygon dependent
-    // square(): Square; // extends Polygon dependent
-    // pentagon(): Pentagon; // extends Polygon dependent
-    // hexagon(): Hexagon; // extends Polygon dependent
-    // octagon(): Octogon; // extends Polygon dependent
     // axis(): Axis; // dependent
     // axes(): Axes; // dependent
     // grid(): Grid; // dependent
