@@ -3,7 +3,7 @@ import Tag from "../../dom/Tag";
 import Path from "../independent/Path";
 import Radius from "../interfaces/Radius";
 
-export default class Polygon extends Path  implements Radius {
+export default class Polygon extends Path implements Radius {
 
     private numberOfSides: number;
     private radiusValue: string;
