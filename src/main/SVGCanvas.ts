@@ -5,6 +5,7 @@ import Rectangle from "./canvas-objects/independent/Rectangle";
 import Line from "./canvas-objects/independent/Line";
 import Path from "./canvas-objects/independent/Path";
 import DrawingInterface from "./DrawingInterface";
+import Polygon from "./canvas-objects/dependent/Polygon";
 
 export default class SVGCanvas implements DrawingInterface {
 
@@ -51,6 +52,11 @@ export default class SVGCanvas implements DrawingInterface {
     // @Override
     public path(): Path {
         return this.register(new Path());
+    }
+
+    // @Override
+    public polygon(): Polygon {
+        return this.register(new Polygon());
     }
 
 }

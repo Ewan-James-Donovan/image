@@ -100,3 +100,27 @@ describe('Path', function () {
     });
 
 });
+
+describe('Polygon', function () {
+
+    it('should render with a tag and attributes', function () {
+        const canvas: SVGCanvas = new SVGCanvas("some-id");
+        canvas.polygon()
+            .sides(5)
+            .lineCap("square")
+            .stroke("green")
+            .strokeWidth("2px")
+            .dash("1, 3, 5, 9")
+            .strokeOpacity("70%")
+            .fill("lime")
+            .fillOpacity("30%");
+        expect(canvas.render(true)).toBe("<svg style=\"width: 100%; height: 100%;\"><path d=\"M 50 50L 50 50L 300 300L 590 590\" stroke=\"green\" stroke-width=\"2px\" stroke-linecap=\"square\" stroke-dasharray=\"1, 3, 5, 9\" stroke-opacity=\"70%\" fill=\"lime\" fill-opacity=\"30%\"></path></svg>")
+    });
+    
+    it('should not render if it has no attributes', function () {
+        const canvas: SVGCanvas = new SVGCanvas("some-id");
+        canvas.rectangle();
+        expect(canvas.render(true)).toBe("<svg style=\"width: 100%; height: 100%;\"></svg>");
+    });
+
+});

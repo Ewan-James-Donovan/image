@@ -6,14 +6,14 @@ import Fill from "../interfaces/Fill";
 
 export default class Path extends CanvasObject implements Stroke, Fill {
 
-    private pathString: string;
-    private strokeColor: string;
-    private strokeWidthValue: string;
-    private lineCapType: string;
-    private dashArray: string;
-    private strokeOpacityValue: string;
-    private fillValue: string;
-    private fillOpacityValue: string;
+    protected pathString: string;
+    protected strokeColor: string;
+    protected strokeWidthValue: string;
+    protected lineCapType: string;
+    protected dashArray: string;
+    protected strokeOpacityValue: string;
+    protected fillValue: string;
+    protected fillOpacityValue: string;
 
     // @Override
     public prepareForBuild(): void {
@@ -30,7 +30,7 @@ export default class Path extends CanvasObject implements Stroke, Fill {
         );
     }
 
-    public points(nestedPointArray: Array<Array<Number>>): Path {
+    public points(nestedPointArray: Array<Array<number>>): Path {
         this.pathString = "M ";
         let firstElement: boolean = true;
         for (const pointArray of nestedPointArray) {
