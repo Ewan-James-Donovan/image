@@ -39,11 +39,13 @@ export default class Polygon extends Path implements Radius {
         );
     }
 
+    // @Override
     public sides(numberOfSides: number): Polygon {
         this.numberOfSides = Math.round(numberOfSides);
         return this;
     }
 
+    // @Override
     public radius(radiusValue: string): Polygon {
         this.radiusValue = radiusValue;
         return this;
