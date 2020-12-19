@@ -38,7 +38,7 @@ export default class Path extends CanvasObject implements Stroke, Fill {
                 this.pathString += + pointArray[0].toString() + " " + pointArray[1].toString();
                 firstElement = false;
             }
-            this.pathString += "L " + pointArray[0].toString() + " " + pointArray[1].toString();
+            this.pathString += " L " + pointArray[0].toString() + " " + pointArray[1].toString();
         }
         return this;
     }

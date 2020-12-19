@@ -1,22 +1,29 @@
 import Attribute from "../../dom/Attribute";
 import Tag from "../../dom/Tag";
 import Path from "../independent/Path";
+import Position from "../interfaces/Position";
 import Radius from "../interfaces/Radius";
+import Rotate from "../interfaces/Rotate";
 
-export default class Polygon extends Path implements Radius {
+export default class Polygon extends Path implements Radius, Position, Rotate {
 
     private numberOfSides: number;
-    private radiusValue: string;
+    private radiusValue: number;
+    private xValue: number;
+    private yValue: number;
     private nestedPointArray: Array<Array<number>>;
+    private radiansToRotate: number;
 
     constructor() {
         super();
         this.points = undefined;
+        this.pathString = undefined;
     }
 
     // @Override
     public prepareForBuild(): void {
         // super.points() ???
+        this.calculatePoints();
         let pathString: string = "M ";
         let firstElement: boolean = true;
         for (const pointArray of this.nestedPointArray) {
@@ -24,7 +31,7 @@ export default class Polygon extends Path implements Radius {
                 pathString += + pointArray[0].toString() + " " + pointArray[1].toString();
                 firstElement = false;
             }
-            pathString += "L " + pointArray[0].toString() + " " + pointArray[1].toString();
+            pathString += " L " + pointArray[0].toString() + " " + pointArray[1].toString();
         }
         this.addTag(
             new Tag("path")
@@ -39,6 +46,22 @@ export default class Polygon extends Path implements Radius {
         );
     }
 
+    private calculatePoints(): void {
+        this.nestedPointArray = new Array<Array<number>>();
+        for (let i: number = 0; i <= this.numberOfSides; i++) {
+            this.nestedPointArray.push([
+                this.radiusValue * Math.cos((i * 2 * Math.PI) / this.numberOfSides + this.radiansToRotate) + this.xValue,
+                this.radiusValue * Math.sin((i * 2 * Math.PI) / this.numberOfSides + this.radiansToRotate) + this.yValue
+            ]);
+        }
+    }
+
+    // @Override
+    rotate(radiansToRotate: number): Polygon {
+        this.radiansToRotate = radiansToRotate;
+        return this;
+    }
+
     // @Override
     public sides(numberOfSides: number): Polygon {
         this.numberOfSides = Math.round(numberOfSides);
@@ -46,8 +69,27 @@ export default class Polygon extends Path implements Radius {
     }
 
     // @Override
-    public radius(radiusValue: string): Polygon {
+    public radius(radiusValue: number): Polygon {
         this.radiusValue = radiusValue;
+        return this;
+    }
+
+    // @Override
+    public x(x: number): Polygon {
+        this.xValue = x;
+        return this;
+    }
+
+    // @Override
+    public y(y: number): Polygon {
+        this.yValue = y;
+        return this;
+    }
+
+    // @Override
+    public position(x: number, y: number): Polygon {
+        this.x(x);
+        this.y(y);
         return this;
     }
 
