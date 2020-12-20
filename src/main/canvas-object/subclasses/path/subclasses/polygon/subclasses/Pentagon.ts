@@ -1,4 +1,4 @@
-import Polygon from "./Polygon";
+import Polygon from "../Polygon";
 
 export default class Pentagon extends Polygon {
 

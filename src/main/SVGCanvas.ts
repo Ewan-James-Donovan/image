@@ -1,16 +1,16 @@
 import SVGBuilder from "./dom/SVGBuilder";
-import CanvasObject from "./canvas-objects/CanvasObject";
-import Circle from "./canvas-objects/independent/Circle";
-import Rectangle from "./canvas-objects/independent/Rectangle";
-import Line from "./canvas-objects/independent/Line";
-import Path from "./canvas-objects/independent/Path";
+import CanvasObject from "./canvas-object/CanvasObject";
+import Circle from "./canvas-object/subclasses/Circle";
+import Rectangle from "./canvas-object/subclasses/Rectangle";
+import Line from "./canvas-object/subclasses/Line";
+import Path from "./canvas-object/subclasses/path/Path";
 import DrawingInterface from "./DrawingInterface";
-import Polygon from "./canvas-objects/dependent/Polygon";
-import Triangle from "./canvas-objects/dependent/Triangle";
-import Square from "./canvas-objects/dependent/Square";
-import Pentagon from "./canvas-objects/dependent/Pentagon";
-import Hexagon from "./canvas-objects/dependent/Hexagon";
-import Octagon from "./canvas-objects/dependent/Octagon";
+import Polygon from "./canvas-object/subclasses/path/subclasses/polygon/Polygon";
+import Triangle from "./canvas-object/subclasses/path/subclasses/polygon/subclasses/Triangle";
+import Square from "./canvas-object/subclasses/path/subclasses/polygon/subclasses/Square";
+import Pentagon from "./canvas-object/subclasses/path/subclasses/polygon/subclasses/Pentagon";
+import Hexagon from "./canvas-object/subclasses/path/subclasses/polygon/subclasses/Hexagon";
+import Octagon from "./canvas-object/subclasses/path/subclasses/polygon/subclasses/Octagon";
 
 export default class SVGCanvas implements DrawingInterface {
 

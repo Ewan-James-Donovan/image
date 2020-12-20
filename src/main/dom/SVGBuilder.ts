@@ -1,4 +1,4 @@
-import CanvasObject from "../canvas-objects/CanvasObject";
+import CanvasObject from "../canvas-object/CanvasObject";
 import Attribute from "./Attribute";
 import Tag from "./Tag";
 

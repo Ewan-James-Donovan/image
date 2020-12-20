@@ -1,13 +1,13 @@
-import Circle from "./canvas-objects/independent/Circle";
-import Rectangle from "./canvas-objects/independent/Rectangle";
-import Line from "./canvas-objects/independent/Line";
-import Path from "./canvas-objects/independent/Path";
-import Polygon from "./canvas-objects/dependent/Polygon";
-import Triangle from "./canvas-objects/dependent/Triangle";
-import Square from "./canvas-objects/dependent/Square";
-import Pentagon from "./canvas-objects/dependent/Pentagon";
-import Hexagon from "./canvas-objects/dependent/Hexagon";
-import Octagon from "./canvas-objects/dependent/Octagon";
+import Circle from "./canvas-object/subclasses/Circle";
+import Rectangle from "./canvas-object/subclasses/Rectangle";
+import Line from "./canvas-object/subclasses/Line";
+import Path from "./canvas-object/subclasses/path/Path";
+import Polygon from "./canvas-object/subclasses/path/subclasses/polygon/Polygon";
+import Triangle from "./canvas-object/subclasses/path/subclasses/polygon/subclasses/Triangle";
+import Square from "./canvas-object/subclasses/path/subclasses/polygon/subclasses/Square";
+import Pentagon from "./canvas-object/subclasses/path/subclasses/polygon/subclasses/Pentagon";
+import Hexagon from "./canvas-object/subclasses/path/subclasses/polygon/subclasses/Hexagon";
+import Octagon from "./canvas-object/subclasses/path/subclasses/polygon/subclasses/Octagon";
 
 export default interface DrawingInterface {
 
@@ -21,23 +21,23 @@ export default interface DrawingInterface {
     pentagon(): Pentagon;
     hexagon(): Hexagon;
     octagon(): Octagon;
-    // text(): Text // independent
-    // axis(): Axis; // dependent
-    // axes(): Axes; // dependent
-    // grid(): Grid; // dependent
-    // arc(): Arc; // dependent
-    // graph(): Graph // dependent
-    // spline(cubic, etc): Spline // dependent
-    // bezier(1, 2 (points lol) ): Bezier // dependent
-    // image(file): ImageFrame // independent
-    // svg(file): SVGItem // independent
-    // isometricGrid(): IsometricGrid // dependent
-    // ThreeDSpace(): ThreeDSpace // dependent
-    // cube(): Cube // dependent
-    // tetrahedron: Tetrahedron // dependent
-    // icosahedron: Icosahedron // dependent
-    // dodecahedron: Dodecahedron // dependent
-    // octohedron: Octohedron // dependent
-    // foreignElement: Foreign element // independent
-    // latex(): Latex // independent maybe? or depdendent if foreign
+    // text(): Text 
+    // axis(): Axis; 
+    // axes(): Axes; 
+    // grid(): Grid; 
+    // arc(): Arc; 
+    // graph(): Graph;
+    // spline(cubic, etc): Spline;
+    // bezier(1, 2 (points lol) ): Bezier; 
+    // image(file): ImageFrame; 
+    // svg(file): SVGItem;
+    // isometricGrid(): IsometricGrid; 
+    // ThreeDSpace(): ThreeDSpace; 
+    // cube(): Cube; 
+    // tetrahedron: Tetrahedron; 
+    // icosahedron: Icosahedron; 
+    // dodecahedron: Dodecahedron; 
+    // octohedron: Octohedron; 
+    // foreignElement: Foreign element; 
+    // latex(): Latex;
 }

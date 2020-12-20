@@ -1,8 +1,8 @@
-import Tag from "../../dom/Tag";
-import Attribute from "../../dom/Attribute";
-import CanvasObject from "../CanvasObject";
-import Stroke from "../interfaces/Stroke";
-import Fill from "../interfaces/Fill";
+import Tag from "../../../dom/Tag";
+import Attribute from "../../../dom/Attribute";
+import CanvasObject from "../../CanvasObject";
+import Stroke from "../../interfaces/Stroke";
+import Fill from "../../interfaces/Fill";
 
 export default class Path extends CanvasObject implements Stroke, Fill {
 
