@@ -7,6 +7,12 @@ describe('Background', function () {
         expect(canvas.background("blue").render(true)).toBe("<svg style=\"width: 100%; height: 100%; background-color: blue;\"></svg>");
     });
 
+    it('should render as transparent if no colour is specified', function () {
+        const canvas: SVGCanvas = new SVGCanvas("some-id");
+        expect(canvas.render(true)).toBe("<svg style=\"width: 100%; height: 100%; background-color: rgba(0,0,0,0);\"></svg>");
+    });
+
+
 });
 
 describe('Circle', function () {
