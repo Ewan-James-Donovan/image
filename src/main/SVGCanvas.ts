@@ -16,6 +16,7 @@ export default class SVGCanvas implements DrawingInterface {
 
     private containerElementId: string;
     private registry: Array<CanvasObject> = new Array<CanvasObject>();
+    private backgroundColor: string;
 
     constructor(containerElementId: string) {
         this.containerElementId = containerElementId;
@@ -26,8 +27,8 @@ export default class SVGCanvas implements DrawingInterface {
         return canvasObject;
     }
 
-    public render(testMode = false) {
-        const html: string = SVGBuilder.buildFromRegistry(this.registry);
+    public render(testMode = false): string {
+        const html: string = SVGBuilder.buildFromRegistry(this.registry, this.backgroundColor ? this.backgroundColor : "rgba(0,0,0,0)");
         if (!testMode) {
             try {
                 document.getElementById(this.containerElementId).innerHTML = html;
@@ -37,6 +38,11 @@ export default class SVGCanvas implements DrawingInterface {
         }
         this.registry = new Array<CanvasObject>();
         return html;
+    }
+
+    public background(backgroundColor: string): SVGCanvas {
+        this.backgroundColor = backgroundColor;
+        return this;
     }
 
     // @Override

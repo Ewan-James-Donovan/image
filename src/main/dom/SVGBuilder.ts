@@ -3,8 +3,8 @@ import Attribute from "./Attribute";
 import Tag from "./Tag";
 
 export default class SVGBuilder {
-    static buildFromRegistry(registry: Array<CanvasObject>): string {
-        let html: string = "<svg style=\"width: 100%; height: 100%;\">";
+    static buildFromRegistry(registry: Array<CanvasObject>, backgroundColor: string): string {
+        let html: string = "<svg style=\"width: 100%; height: 100%; background-color: " + backgroundColor + ";\">";
         registry.forEach((canvasObject: CanvasObject) => {
             canvasObject.prepareForBuild();
             let canvasObjectString: string = "";
