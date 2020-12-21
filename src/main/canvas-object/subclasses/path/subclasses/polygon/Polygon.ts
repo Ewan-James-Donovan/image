@@ -95,4 +95,4 @@ export default class Polygon extends Path implements Radius, Position, Rotate {
     }
 
 }
-    
+
