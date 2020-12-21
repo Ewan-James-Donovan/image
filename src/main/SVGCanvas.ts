@@ -21,6 +21,8 @@ export default class SVGCanvas implements DrawingInterface {
     private frameRate: number = 0;
     private currentFrame: number = 0;
     private desiredFrameRate: number;
+    private startTime: number;
+    private timeElapsedValue: number;
 
     constructor(containerElementId: string) {
         this.containerElementId = containerElementId;
@@ -44,17 +46,31 @@ export default class SVGCanvas implements DrawingInterface {
         return html;
     }
 
+    public timeElapsed(): number {
+        return new Number(this.timeElapsedValue).valueOf();
+    }
+
+    public timeElapsedIsBetween(startMs: number, endMs: number): boolean {
+        if (this.timeElapsedValue >= startMs && this.timeElapsedValue < endMs) {
+            return true;
+        }
+        return false;
+    } 
+
     public animate(state: Object, func: Function, desiredFrameRate: number = Infinity, staticThrottling: boolean = false, firstCalled: boolean = true): void {
         this.currentFrame++;
         func(state);
         this.render();
+        if (firstCalled) {
+            this.desiredFrameRate = desiredFrameRate;
+            this.startTime = Date.now();
+        } 
         if (staticThrottling || desiredFrameRate === Infinity) {
             setTimeout(() => this.animate(
                 state, func, desiredFrameRate, staticThrottling, false),
                 1000 / desiredFrameRate
             );
         } else {
-            if (firstCalled) this.desiredFrameRate = desiredFrameRate;
             if (this.frameRate < this.desiredFrameRate) {
                 setTimeout(() => this.animate(
                     state, func, desiredFrameRate + 1, staticThrottling, false),
@@ -74,6 +90,7 @@ export default class SVGCanvas implements DrawingInterface {
         }
         const delta: number = (Date.now() - this.lastRendered) / 1000;
         this.lastRendered = Date.now();
+        this.timeElapsedValue = this.lastRendered - this.startTime;
         this.frameRate = 1 / delta;
     }
 
@@ -98,7 +115,7 @@ export default class SVGCanvas implements DrawingInterface {
     }
 
     // @Override
-    public path(): Path {
+    public path(): Path<any> {
         return this.register(new Path());
     }
 

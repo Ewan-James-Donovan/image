@@ -1,7 +1,5 @@
-import CanvasObject from "../CanvasObject";
+export default interface Fill<T> {
 
-export default interface Fill {
-
-    fill(cssColour: string): CanvasObject;
-    fillOpacity(fillOpacityValue: string): CanvasObject;
+    fill(cssColour: string): T;
+    fillOpacity(fillOpacityValue: string): T;
 }

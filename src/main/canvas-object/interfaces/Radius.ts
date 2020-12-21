@@ -1,7 +1,5 @@
-import CanvasObject from "../CanvasObject";
+export default interface Radius<T> {
 
-export default interface Radius {
-
-    radius(radiusValue: string | number): CanvasObject;
+    radius(radiusValue: string | number): T;
 
 }

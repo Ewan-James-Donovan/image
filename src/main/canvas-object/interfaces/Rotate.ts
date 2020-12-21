@@ -1,7 +1,5 @@
-import CanvasObject from "../CanvasObject";
+export default interface Rotate<T> {
 
-export default interface Rotate {
-
-    rotate(radiansToRotate: number): CanvasObject;
+    rotate(radiansToRotate: number): T;
 
 }

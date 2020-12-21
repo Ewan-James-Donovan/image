@@ -3,7 +3,7 @@ import Attribute from "../../dom/Attribute";
 import CanvasObject from "../CanvasObject";
 import Stroke from "../interfaces/Stroke";
 
-export default class Line extends CanvasObject implements Stroke {
+export default class Line extends CanvasObject implements Stroke<Line> {
 
     private x1Value: string;
     private x2Value: string;

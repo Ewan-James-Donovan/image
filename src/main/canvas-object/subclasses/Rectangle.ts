@@ -6,7 +6,7 @@ import Fill from "../interfaces/Fill";
 import Stroke from "../interfaces/Stroke";
 import Dimensions from "../interfaces/Dimensions";
 
-export default class Rectangle extends CanvasObject implements Dimensions, Position, Fill, Stroke {
+export default class Rectangle extends CanvasObject implements Dimensions<Rectangle>, Position<Rectangle>, Fill<Rectangle>, Stroke<Rectangle> {
 
     private cornerRadius: string;
     private widthValue: string;

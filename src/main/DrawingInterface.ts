@@ -11,10 +11,11 @@ import Octagon from "./canvas-object/subclasses/path/subclasses/polygon/subclass
 
 export default interface DrawingInterface {
 
+    background(backgroundColor: string): void;
     circle(): Circle;
     rectangle(): Rectangle;
     line(): Line;
-    path(): Path;
+    path(): Path<any>;
     polygon(): Polygon;
     triangle(): Triangle;
     square(): Square;

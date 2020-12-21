@@ -1,11 +1,9 @@
-import CanvasObject from "../CanvasObject";
+export default interface Stroke<T> {
 
-export default interface Stroke {
-
-    stroke(strokeColor: string): CanvasObject;
-    strokeWidth(strokeWidthValue: string): CanvasObject;
-    lineCap(lineCapType: string): CanvasObject;
-    dash(dashArray: string): CanvasObject;
-    strokeOpacity(strokeOpacityValue: string): CanvasObject;
+    stroke(strokeColor: string): T;
+    strokeWidth(strokeWidthValue: string): T;
+    lineCap(lineCapType: string): T;
+    dash(dashArray: string): T;
+    strokeOpacity(strokeOpacityValue: string): T;
 
 }

@@ -4,7 +4,7 @@ import CanvasObject from "../../CanvasObject";
 import Stroke from "../../interfaces/Stroke";
 import Fill from "../../interfaces/Fill";
 
-export default class Path extends CanvasObject implements Stroke, Fill {
+export default class Path<SubType> extends CanvasObject implements Stroke<any>, Fill<any> {
 
     private pathString: string;
     protected strokeColor: string;
@@ -30,7 +30,7 @@ export default class Path extends CanvasObject implements Stroke, Fill {
         );
     }
 
-    public points(nestedPointArray: Array<Array<number>>): Path {
+    public points(nestedPointArray: Array<Array<number>>): SubType {
         this.pathString = "M ";
         let firstElement: boolean = true;
         for (const pointArray of nestedPointArray) {
@@ -40,49 +40,49 @@ export default class Path extends CanvasObject implements Stroke, Fill {
             }
             this.pathString += " L " + pointArray[0].toString() + " " + pointArray[1].toString();
         }
-        return this;
+        return <SubType> <unknown> this;
     }
 
     // @Override
-    public fill(fillValue: string): Path {
+    public fill(fillValue: string): SubType {
         this.fillValue = fillValue;
-        return this;
+        return <SubType> <unknown> this;
     }
 
     // @Override
-    public fillOpacity(fillOpacityValue: string): Path {
+    public fillOpacity(fillOpacityValue: string): SubType {
         this.fillOpacityValue = fillOpacityValue;
-        return this;
+        return <SubType> <unknown> this;
     };
 
     // @Override
-    public stroke(strokeColor: string): Path {
+    public stroke(strokeColor: string): SubType {
         this.strokeColor = strokeColor;
-        return this;
+        return <SubType> <unknown> this;
     }
 
     // @Override
-    public strokeWidth(strokeWidthValue: string): Path {
+    public strokeWidth(strokeWidthValue: string): SubType {
         this.strokeWidthValue = strokeWidthValue;
-        return this;
+        return <SubType> <unknown> this;
     };
 
     // @Override
-    public lineCap(lineCapType: string): Path {
+    public lineCap(lineCapType: string): SubType {
         this.lineCapType = lineCapType;
-        return this;
+        return <SubType> <unknown> this;
     };
 
     // @Override
-    public dash(dashArray: string): Path {
+    public dash(dashArray: string): SubType {
         this.dashArray = dashArray;
-        return this;
+        return <SubType> <unknown> this;
     };
 
     // @Override
-    public strokeOpacity(strokeOpacityValue: string): Path {
+    public strokeOpacity(strokeOpacityValue: string): SubType {
         this.strokeOpacityValue = strokeOpacityValue;
-        return this;
+        return <SubType> <unknown> this;
     };
 
 }

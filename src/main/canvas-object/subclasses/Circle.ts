@@ -6,7 +6,7 @@ import Position from "../interfaces/Position";
 import Fill from "../interfaces/Fill";
 import Stroke from "../interfaces/Stroke";
 
-export default class Circle extends CanvasObject implements Radius, Position, Fill, Stroke {
+export default class Circle extends CanvasObject implements Radius<Circle>, Position<Circle>, Fill<Circle>, Stroke<Circle> {
 
     private radiusValue: string;
     private xValue: string;

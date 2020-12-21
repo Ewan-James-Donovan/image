@@ -5,7 +5,7 @@ import Position from "../../../../interfaces/Position";
 import Radius from "../../../../interfaces/Radius";
 import Rotate from "../../../../interfaces/Rotate";
 
-export default class Polygon extends Path implements Radius, Position, Rotate {
+export default class Polygon extends Path<Polygon> implements Radius<Polygon>, Position<Polygon>, Rotate<Polygon> {
 
     private numberOfSides: number;
     private radiusValue: number;
