@@ -45,7 +45,7 @@ export default class Rectangle extends CanvasObject implements Dimensions, Posit
         this.cornerRadius = cornerRadius;
         return this;
     }
-    
+
     // @Override
     public width(widthValue: string): Rectangle {
         this.widthValue = widthValue;

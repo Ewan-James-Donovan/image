@@ -1,9 +1,9 @@
-import Attribute from "../../../../../dom/Attribute";
-import Tag from "../../../../../dom/Tag";
-import Path from "../../Path";
-import Position from "../../../../interfaces/Position";
-import Radius from "../../../../interfaces/Radius";
-import Rotate from "../../../../interfaces/Rotate";
+import Attribute from "../../../../dom/Attribute";
+import Tag from "../../../../dom/Tag";
+import Path from "../Path";
+import Position from "../../../interfaces/Position";
+import Radius from "../../../interfaces/Radius";
+import Rotate from "../../../interfaces/Rotate";
 
 export default class Polygon extends Path implements Radius, Position, Rotate {
 
@@ -95,4 +95,4 @@ export default class Polygon extends Path implements Radius, Position, Rotate {
     }
 
 }
-    
+

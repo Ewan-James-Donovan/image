@@ -54,7 +54,7 @@ export default class Path extends CanvasObject implements Stroke, Fill {
         this.fillOpacityValue = fillOpacityValue;
         return this;
     };
-    
+
     // @Override
     public stroke(strokeColor: string): Path {
         this.strokeColor = strokeColor;
