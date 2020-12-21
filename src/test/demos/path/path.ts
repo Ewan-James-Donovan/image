@@ -4,8 +4,8 @@ const canvas: SVGCanvas = new SVGCanvas("test");
 
 canvas.path()
     .points([
-        [50, 50], 
-        [100, 300], 
+        [50, 50],
+        [100, 300],
         [590, 590]
     ])
     .lineCap("butt")

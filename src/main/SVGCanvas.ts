@@ -1,21 +1,26 @@
 import SVGBuilder from "./dom/SVGBuilder";
-import CanvasObject from "./canvas-objects/CanvasObject";
-import Circle from "./canvas-objects/independent/Circle";
-import Rectangle from "./canvas-objects/independent/Rectangle";
-import Line from "./canvas-objects/independent/Line";
-import Path from "./canvas-objects/independent/Path";
+import CanvasObject from "./canvas-object/CanvasObject";
+import Circle from "./canvas-object/subclasses/Circle";
+import Rectangle from "./canvas-object/subclasses/Rectangle";
+import Line from "./canvas-object/subclasses/Line";
+import Path from "./canvas-object/subclasses/path/Path";
 import DrawingInterface from "./DrawingInterface";
-import Polygon from "./canvas-objects/dependent/Polygon";
-import Triangle from "./canvas-objects/dependent/Triangle";
-import Square from "./canvas-objects/dependent/Square";
-import Pentagon from "./canvas-objects/dependent/Pentagon";
-import Hexagon from "./canvas-objects/dependent/Hexagon";
-import Octagon from "./canvas-objects/dependent/Octagon";
+import Polygon from "./canvas-object/subclasses/path/subclasses/polygon/Polygon";
+import Triangle from "./canvas-object/subclasses/path/subclasses/polygon/subclasses/Triangle";
+import Square from "./canvas-object/subclasses/path/subclasses/polygon/subclasses/Square";
+import Pentagon from "./canvas-object/subclasses/path/subclasses/polygon/subclasses/Pentagon";
+import Hexagon from "./canvas-object/subclasses/path/subclasses/polygon/subclasses/Hexagon";
+import Octagon from "./canvas-object/subclasses/path/subclasses/polygon/subclasses/Octagon";
 
 export default class SVGCanvas implements DrawingInterface {
 
     private containerElementId: string;
     private registry: Array<CanvasObject> = new Array<CanvasObject>();
+    private backgroundColor: string;
+    private lastRendered: number = Date.now();
+    private frameRate: number = 0;
+    private currentFrame: number = 0;
+    private desiredFrameRate: number;
 
     constructor(containerElementId: string) {
         this.containerElementId = containerElementId;
@@ -26,8 +31,8 @@ export default class SVGCanvas implements DrawingInterface {
         return canvasObject;
     }
 
-    public render(testMode = false) {
-        const html: string = SVGBuilder.buildFromRegistry(this.registry);
+    public render(testMode = false): string {
+        const html: string = SVGBuilder.buildFromRegistry(this.registry, this.backgroundColor ? this.backgroundColor : "rgba(0,0,0,0)");
         if (!testMode) {
             try {
                 document.getElementById(this.containerElementId).innerHTML = html;
@@ -37,6 +42,44 @@ export default class SVGCanvas implements DrawingInterface {
         }
         this.registry = new Array<CanvasObject>();
         return html;
+    }
+
+    public animate(state: Object, func: Function, desiredFrameRate: number = Infinity, staticThrottling: boolean = false, firstCalled: boolean = true): void {
+        this.currentFrame++;
+        func(state);
+        this.render();
+        if (staticThrottling || desiredFrameRate === Infinity) {
+            setTimeout(() => this.animate(
+                state, func, desiredFrameRate, staticThrottling, false),
+                1000 / desiredFrameRate
+            );
+        } else {
+            if (firstCalled) this.desiredFrameRate = desiredFrameRate;
+            if (this.frameRate < this.desiredFrameRate) {
+                setTimeout(() => this.animate(
+                    state, func, desiredFrameRate + 1, staticThrottling, false),
+                    1000 / (desiredFrameRate + this.desiredFrameRate / Math.pow(this.desiredFrameRate, 2))
+                );
+            } else if (this.frameRate > this.desiredFrameRate) {
+                setTimeout(() => this.animate(
+                    state, func, desiredFrameRate - 1, staticThrottling, false),
+                    1000 / (desiredFrameRate - this.desiredFrameRate / Math.pow(this.desiredFrameRate, 2))
+                );
+            } else {
+                setTimeout(() => this.animate(
+                    state, func, desiredFrameRate, staticThrottling, false),
+                    1000 / desiredFrameRate
+                );
+            }
+        }
+        const delta: number = (Date.now() - this.lastRendered) / 1000;
+        this.lastRendered = Date.now();
+        this.frameRate = 1 / delta;
+    }
+
+    public background(backgroundColor: string): SVGCanvas {
+        this.backgroundColor = backgroundColor;
+        return this;
     }
 
     // @Override
