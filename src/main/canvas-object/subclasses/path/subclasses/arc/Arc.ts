@@ -1,9 +1,11 @@
 import Attribute from "../../../../../dom/Attribute";
 import Tag from "../../../../../dom/Tag";
 import Path from "../../Path";
-import PolygonSidesInterface from "../../../../interfaces/PolygonSidesInterface";
+import Position from "../../../../interfaces/Position";
+import Radius from "../../../../interfaces/Radius";
+import Rotate from "../../../../interfaces/Rotate";
 
-export default class Polygon extends Path<PolygonSidesInterface> implements PolygonSidesInterface {
+export default class Arc extends Path<Arc> implements Radius<Arc>, Position<Arc>, Rotate<Arc> {
 
     private numberOfSides: number;
     private radiusValue: number;
@@ -11,6 +13,11 @@ export default class Polygon extends Path<PolygonSidesInterface> implements Poly
     private yValue: number;
     private nestedPointArray: Array<Array<number>>;
     private radiansToRotate: number;
+
+    constructor() {
+        super();
+        this.points = undefined;
+    }
 
     // @Override
     public prepareForBuild(): void {
@@ -51,37 +58,37 @@ export default class Polygon extends Path<PolygonSidesInterface> implements Poly
     }
 
     // @Override
-    public rotate(radiansToRotate: number): PolygonSidesInterface {
+    public rotate(radiansToRotate: number): Arc {
         this.radiansToRotate = radiansToRotate;
         return this;
     }
 
     // @Override
-    public sides(numberOfSides: number): PolygonSidesInterface {
+    public sides(numberOfSides: number): Arc {
         this.numberOfSides = Math.round(numberOfSides);
         return this;
     }
 
     // @Override
-    public radius(radiusValue: number): PolygonSidesInterface {
+    public radius(radiusValue: number): Arc {
         this.radiusValue = radiusValue;
         return this;
     }
 
     // @Override
-    public x(x: number): PolygonSidesInterface {
+    public x(x: number): Arc {
         this.xValue = x;
         return this;
     }
 
     // @Override
-    public y(y: number): PolygonSidesInterface {
+    public y(y: number): Arc {
         this.yValue = y;
         return this;
     }
 
     // @Override
-    public position(x: number, y: number): PolygonSidesInterface {
+    public position(x: number, y: number): Arc {
         this.x(x);
         this.y(y);
         return this;

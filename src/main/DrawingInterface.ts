@@ -8,6 +8,8 @@ import Square from "./canvas-object/subclasses/path/subclasses/polygon/subclasse
 import Pentagon from "./canvas-object/subclasses/path/subclasses/polygon/subclasses/Pentagon";
 import Hexagon from "./canvas-object/subclasses/path/subclasses/polygon/subclasses/Hexagon";
 import Octagon from "./canvas-object/subclasses/path/subclasses/polygon/subclasses/Octagon";
+import PolygonInterface from "./canvas-object/interfaces/PolygonInterface";
+import PolygonSidesInterface from "./canvas-object/interfaces/PolygonSidesInterface";
 
 export default interface DrawingInterface {
 
@@ -16,12 +18,12 @@ export default interface DrawingInterface {
     rectangle(): Rectangle;
     line(): Line;
     path(): Path<any>;
-    polygon(): Polygon;
-    triangle(): Triangle;
-    square(): Square;
-    pentagon(): Pentagon;
-    hexagon(): Hexagon;
-    octagon(): Octagon;
+    polygon(): PolygonSidesInterface;
+    triangle(): PolygonInterface;
+    square(): PolygonInterface;
+    pentagon(): PolygonInterface;
+    hexagon(): PolygonInterface;
+    octagon(): PolygonInterface;
     // text(): Text 
     // axis(): Axis; 
     // axes(): Axes; 

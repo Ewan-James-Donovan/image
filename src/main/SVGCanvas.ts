@@ -11,6 +11,8 @@ import Square from "./canvas-object/subclasses/path/subclasses/polygon/subclasse
 import Pentagon from "./canvas-object/subclasses/path/subclasses/polygon/subclasses/Pentagon";
 import Hexagon from "./canvas-object/subclasses/path/subclasses/polygon/subclasses/Hexagon";
 import Octagon from "./canvas-object/subclasses/path/subclasses/polygon/subclasses/Octagon";
+import PolygonInterface from "./canvas-object/interfaces/PolygonInterface";
+import PolygonSidesInterface from "./canvas-object/interfaces/PolygonSidesInterface";
 
 export default class SVGCanvas implements DrawingInterface {
 
@@ -120,32 +122,32 @@ export default class SVGCanvas implements DrawingInterface {
     }
 
     // @Override
-    public polygon(): Polygon {
+    public polygon(): PolygonSidesInterface {
         return this.register(new Polygon());
     }
 
     // @Override
-    public triangle(): Triangle {
+    public triangle(): PolygonInterface {
         return this.register(new Triangle());
     }
 
     // @Override
-    public square(): Square {
+    public square(): PolygonInterface {
         return this.register(new Square());
     }
 
     // @Override
-    public pentagon(): Pentagon {
+    public pentagon(): PolygonInterface {
         return this.register(new Pentagon());
     }
 
     // @Override
-    public hexagon(): Hexagon {
+    public hexagon(): PolygonInterface {
         return this.register(new Hexagon());
     }
 
     // @Override
-    public octagon(): Octagon {
+    public octagon(): PolygonInterface {
         return this.register(new Octagon());
     }
 

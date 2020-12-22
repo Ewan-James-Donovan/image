@@ -39,7 +39,6 @@ canvas.square()
     .fill("lime")
     .fillOpacity("10%");
 
-
 canvas.pentagon()
     .position(320, 320)
     .radius(100)
