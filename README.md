@@ -6,6 +6,7 @@ SVGCanvas is a TypeScript package used to simplify the drawing and animation of 
     - [Install](#install)
     - [React Typescript](#react-typescript)
     - [Vanilla JavaScript](#vanilla-javascript)
+  - [Features](#features)
   - [Class Diagram](#class-diagram)
   
 ## Getting started
@@ -44,40 +45,27 @@ componentDidMount() {
 }
 ```
 
-5. Play! Be sure to check out the feature list and demo files. Below is an example of what is possible:
+5. Play! Be sure to check out the feature list and demo files. Below is a simple drawing without animation:
 ```typescript
 componentDidMount() {
+    const canvas: SVGCanvas = new SVGCanvas("someUniqueId");
 
-    const canvas: SVGCanvas = new SVGCanvas("test");
+    canvas.circle()
+        .radius("200px")
+        .position("320px", "320px")
+        .fill("cyan")
+        .lineCap("round")
+        .stroke("magenta")
+        .strokeWidth("10px")
+        .dash("30,30,50,50")
+        .fillOpacity("50%")
+        .strokeOpacity("50%");
 
-    canvas.animate({ r: 100, t: 0 }, (state: any) => {
-
-        canvas.circle()
-            .radius(String(Math.sin(state.r) * 100 + 100) + "px")
-            .position("320px", "320px")
-            .fill("green")
-            .fillOpacity("20%");
-
-        if (canvas.timeElapsedIsBetween(2000, 4000)) {
-            canvas.arc()
-                .from(state.t)
-                .to(state.t * 3)
-                .position(320, 320)
-                .radius(200)
-                .fillOpacity("0")
-                .stroke("black")
-                .strokeWidth("5px");
-            state.t += 0.01;
-        }
-
-        state.r += 0.01;
-        
-    });
-
+    canvas.render();
 }
 ```
 ### Vanilla JavaScript
-
+## Features
 ## Class Diagram
 <img src="./docs/diagrams/classdiagram.svg">
 <img src="./docs/diagrams/legend.svg">
