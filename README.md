@@ -41,16 +41,16 @@ render() {
 4. Within your component's componentDidMount method (create it if it doesn't exist yet), instantiate a new SVGCanvas and provide the id you picked for your container element within the constructor:
 ```typescript
 componentDidMount() {
-    const canvas = new SVGCanvas("someUniqueId");
+    const sc = new SVGCanvas("someUniqueId");
 }
 ```
 
 5. Play! Be sure to check out the feature list and demo files. Below is a simple drawing without animation:
 ```typescript
 componentDidMount() {
-    const canvas: SVGCanvas = new SVGCanvas("someUniqueId");
+    const sc: SVGCanvas = new SVGCanvas("someUniqueId");
 
-    canvas.circle()
+    sc.circle()
         .radius("200px")
         .position("320px", "320px")
         .fill("cyan")
@@ -61,7 +61,21 @@ componentDidMount() {
         .fillOpacity("50%")
         .strokeOpacity("50%");
 
-    canvas.render();
+    sc.render();
+}
+```
+. . . and one with animation:
+```typescript
+componentDidMount() {
+    const sc: SVGCanvas = new SVGCanvas("someUniqueId");
+
+    sc.animate({ r: 0 }, (state: any) => {
+        sc.circle()
+            .radius(`${state.r % 100}px`)
+            .position("320px", "320px")
+            .fill("cyan");
+        state.r++;
+    });
 }
 ```
 ### Vanilla JavaScript
