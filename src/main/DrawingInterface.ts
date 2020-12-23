@@ -3,7 +3,7 @@ import Rectangle from "./canvas-object/subclasses/Rectangle";
 import Line from "./canvas-object/subclasses/Line";
 import Path from "./canvas-object/subclasses/path/Path";
 import PolygonInterface from "./canvas-object/subclasses/path/subclasses/polygon/PolygonInterface";
-import PolygonSidesInterface from "./canvas-object/subclasses/path/subclasses/polygon/subclasses/PolygonSidesInterface";
+import PolygonSuperInterface from "./canvas-object/subclasses/path/subclasses/polygon/subclasses/PolygonSuperInterface";
 import ArcInterface from "./canvas-object/subclasses/path/subclasses/arc/ArcInterface";
 
 
@@ -14,7 +14,7 @@ export default interface DrawingInterface {
     rectangle(): Rectangle;
     line(): Line;
     path(): Path<any>;
-    polygon(): PolygonSidesInterface;
+    polygon(): PolygonSuperInterface;
     triangle(): PolygonInterface;
     square(): PolygonInterface;
     pentagon(): PolygonInterface;
