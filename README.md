@@ -1,11 +1,11 @@
 # svg-canvas
 
-SVGCanvas is a TypeScript package used to simplify the drawing and animation of SVG elements on the web using fluent interfaces and 'frame-by-frame' animation.
+SVGCanvas is a TypeScript package used to simplify the drawing and animation of SVG elements on the web using <a href="https://en.wikipedia.org/wiki/Fluent_interface">fluent interfaces</a> and 'frame-by-frame' animation.
 
   - [Getting started](#getting-started)
     - [Install](#install)
-    - [Vanilla JavaScript](#vanilla-javascript)
     - [React Typescript](#react-typescript)
+    - [Vanilla JavaScript](#vanilla-javascript)
   - [Class Diagram](#class-diagram)
   
 ## Getting started
@@ -16,16 +16,16 @@ SVGCanvas is a TypeScript package used to simplify the drawing and animation of 
 ```
 npm i svgcanvas
 ```
-### Vanilla JavaScript
+
 
 
 ### React Typescript
 1. Within your editor, open the react component you wish to create a new canvas inside.
-2. Import SVGCanvas into this component:
+2. Import SVGCanvas into the component:
 ```typescript
 import "SVGCanvas" from "svgcanvas";
 ```
-3. Inspect the JSX returned by your component's render function and add a unique css ID to the element you wish to use as a container for your canvas:
+3. Inspect / create the JSX returned by your component's render function and add a unique css ID to the element you wish to use as a container for your canvas:
 ```typescript
 render() {
     return (
@@ -76,6 +76,8 @@ componentDidMount() {
 
 }
 ```
+### Vanilla JavaScript
+
 ## Class Diagram
 <img src="./docs/diagrams/classdiagram.svg">
 <img src="./docs/diagrams/legend.svg">
