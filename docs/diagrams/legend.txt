@@ -1,0 +1,12 @@
+digraph graphname
+{
+        "Abstract Class" [shape=box, fillcolor=yellow style="filled, rounded"   fontname="consolas" margin="0.3"  label="Abstract Class"]
+        "Class" [shape=box, fillcolor=magenta style="filled, rounded" fontcolor="white"  fontname="consolas" margin="0.2"  label="Class"]
+        "Interface" [shape=box, fillcolor=cyan style="filled, rounded"   fontname="consolas" margin="0.2"  label="Interface"]
+        rankdir=LR
+        node [shape=plaintext]
+        Extends -> "Abstract Class" [color = blue]
+        Instantiates-> "Class" [color=red]
+        Implements -> "Interface"[color=green]
+        "Uses/Acts On/Works with" -> "" [color=black]
+}

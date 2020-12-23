@@ -70,3 +70,6 @@ componentDidMount() {
 
 }
 ```
+## Class Diagram
+<img src="./docs/diagrams/classdiagram.svg">
+<img src="./docs/diagrams/legend.svg">

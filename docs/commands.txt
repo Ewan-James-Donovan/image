@@ -1,0 +1,5 @@
+useful commands
+
+browserify src/test/demos/path/arc/arc.ts -p [ tsify --noImplicitAny] > src/test/demos/path/arc/arc.js
+typedoc --out ./docs/generated .\src\main\ --exclude */test --mode file 
+npm t
