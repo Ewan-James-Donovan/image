@@ -2,6 +2,12 @@
 
 SVGCanvas is a TypeScript package used to simplify the drawing and animation of SVG elements on the web using fluent interfaces and 'frame-by-frame' animation.
 
+  - [Getting started](#getting-started)
+    - [Install](#install)
+    - [Vanilla JavaScript](#vanilla-javascript)
+    - [React Typescript](#react-typescript)
+  - [Class Diagram](#class-diagram)
+  
 ## Getting started
 
 ### Install
