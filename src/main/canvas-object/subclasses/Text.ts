@@ -16,7 +16,7 @@ export default class Text extends CanvasObject implements Position<Text>, Fill<T
     private lineCapType: string;
     private dashArray: string;
     private strokeOpacityValue: string;
-    private textValue: string = "";
+    private textValue: string;
 
     public string(textValue: string) {
         this.textValue = textValue;

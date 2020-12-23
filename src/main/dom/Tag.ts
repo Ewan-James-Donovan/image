@@ -16,7 +16,7 @@ export default class Tag {
     }
 
     public getContent(): string {
-        return `${this.content}`;
+        return `${this.content ? this.content : ""}`;
     }
 
     public addAttribute(attribute: Attribute): Tag {
