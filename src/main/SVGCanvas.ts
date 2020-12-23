@@ -11,8 +11,10 @@ import Square from "./canvas-object/subclasses/path/subclasses/polygon/subclasse
 import Pentagon from "./canvas-object/subclasses/path/subclasses/polygon/subclasses/Pentagon";
 import Hexagon from "./canvas-object/subclasses/path/subclasses/polygon/subclasses/Hexagon";
 import Octagon from "./canvas-object/subclasses/path/subclasses/polygon/subclasses/Octagon";
-import PolygonInterface from "./canvas-object/interfaces/PolygonInterface";
-import PolygonSidesInterface from "./canvas-object/interfaces/PolygonSidesInterface";
+import PolygonInterface from "./canvas-object/subclasses/path/subclasses/polygon/PolygonInterface";
+import PolygonSidesInterface from "./canvas-object/subclasses/path/subclasses/polygon/subclasses/PolygonSidesInterface";
+import Arc from "./canvas-object/subclasses/path/subclasses/arc/Arc";
+import ArcInterface from "./canvas-object/subclasses/path/subclasses/arc/ArcInterface";
 
 export default class SVGCanvas implements DrawingInterface {
 
@@ -151,4 +153,8 @@ export default class SVGCanvas implements DrawingInterface {
         return this.register(new Octagon());
     }
 
+    // @Override
+    public arc(): ArcInterface {
+        return this.register(new Arc());
+    }
 }

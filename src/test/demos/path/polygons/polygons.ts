@@ -1,4 +1,4 @@
-import SVGCanvas from "../../../main/SVGCanvas";
+import SVGCanvas from "../../../../main/SVGCanvas";
 
 const canvas: SVGCanvas = new SVGCanvas("test");
 

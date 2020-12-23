@@ -1,10 +1,10 @@
 import Tag from "../../dom/Tag";
 import Attribute from "../../dom/Attribute";
 import CanvasObject from "../CanvasObject";
-import Position from "../interfaces/Position";
-import Fill from "../interfaces/Fill";
-import Stroke from "../interfaces/Stroke";
-import Dimensions from "../interfaces/Dimensions";
+import Position from "../common-interfaces/Position";
+import Fill from "../common-interfaces/Fill";
+import Stroke from "../common-interfaces/Stroke";
+import Dimensions from "../common-interfaces/Dimensions";
 
 export default class Rectangle extends CanvasObject implements Dimensions<Rectangle>, Position<Rectangle>, Fill<Rectangle>, Stroke<Rectangle> {
 

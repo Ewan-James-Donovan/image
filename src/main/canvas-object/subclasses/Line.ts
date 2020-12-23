@@ -1,7 +1,7 @@
 import Tag from "../../dom/Tag";
 import Attribute from "../../dom/Attribute";
 import CanvasObject from "../CanvasObject";
-import Stroke from "../interfaces/Stroke";
+import Stroke from "../common-interfaces/Stroke";
 
 export default class Line extends CanvasObject implements Stroke<Line> {
 

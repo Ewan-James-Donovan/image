@@ -1,10 +1,10 @@
 import Tag from "../../dom/Tag";
 import Attribute from "../../dom/Attribute";
 import CanvasObject from "../CanvasObject";
-import Radius from "../interfaces/Radius";
-import Position from "../interfaces/Position";
-import Fill from "../interfaces/Fill";
-import Stroke from "../interfaces/Stroke";
+import Radius from "../common-interfaces/Radius";
+import Position from "../common-interfaces/Position";
+import Fill from "../common-interfaces/Fill";
+import Stroke from "../common-interfaces/Stroke";
 
 export default class Circle extends CanvasObject implements Radius<Circle>, Position<Circle>, Fill<Circle>, Stroke<Circle> {
 

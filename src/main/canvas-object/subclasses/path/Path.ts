@@ -1,8 +1,8 @@
 import Tag from "../../../dom/Tag";
 import Attribute from "../../../dom/Attribute";
 import CanvasObject from "../../CanvasObject";
-import Stroke from "../../interfaces/Stroke";
-import Fill from "../../interfaces/Fill";
+import Stroke from "../../common-interfaces/Stroke";
+import Fill from "../../common-interfaces/Fill";
 
 export default class Path<SubType> extends CanvasObject implements Stroke<any>, Fill<any> {
 
@@ -19,7 +19,7 @@ export default class Path<SubType> extends CanvasObject implements Stroke<any>, 
     public prepareForBuild(): void {
         this.addTag(
             new Tag("path")
-                .addAttribute(new Attribute("d", this.pathString))
+                .addAttribute(new Attribute("d", this.pathString === "M " ? null : this.pathString))
                 .addAttribute(new Attribute("stroke", this.strokeColor))
                 .addAttribute(new Attribute("stroke-width", this.strokeWidthValue))
                 .addAttribute(new Attribute("stroke-linecap", this.lineCapType))

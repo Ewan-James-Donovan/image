@@ -1,7 +1,7 @@
 import Attribute from "../../../../../dom/Attribute";
 import Tag from "../../../../../dom/Tag";
 import Path from "../../Path";
-import PolygonSidesInterface from "../../../../interfaces/PolygonSidesInterface";
+import PolygonSidesInterface from "./subclasses/PolygonSidesInterface";
 
 export default class Polygon extends Path<PolygonSidesInterface> implements PolygonSidesInterface {
 
@@ -29,7 +29,7 @@ export default class Polygon extends Path<PolygonSidesInterface> implements Poly
         }
         this.addTag(
             new Tag("path")
-                .addAttribute(new Attribute("d", pathString == "M " ? null : pathString))
+                .addAttribute(new Attribute("d", pathString))
                 .addAttribute(new Attribute("stroke", this.strokeColor))
                 .addAttribute(new Attribute("stroke-width", this.strokeWidthValue))
                 .addAttribute(new Attribute("stroke-linecap", this.lineCapType))
