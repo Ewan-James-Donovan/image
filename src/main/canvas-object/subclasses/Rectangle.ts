@@ -4,9 +4,8 @@ import CanvasObject from "../CanvasObject";
 import Position from "../common-interfaces/Position";
 import Fill from "../common-interfaces/Fill";
 import Stroke from "../common-interfaces/Stroke";
-import Dimensions from "../common-interfaces/Dimensions";
 
-export default class Rectangle extends CanvasObject implements Dimensions<Rectangle>, Position<Rectangle>, Fill<Rectangle>, Stroke<Rectangle> {
+export default class Rectangle extends CanvasObject implements Position<Rectangle>, Fill<Rectangle>, Stroke<Rectangle> {
 
     private cornerRadius: string;
     private widthValue: string;
@@ -46,21 +45,18 @@ export default class Rectangle extends CanvasObject implements Dimensions<Rectan
         return this;
     }
 
-    // @Override
     public width(widthValue: string): Rectangle {
         this.widthValue = widthValue;
         return this;
 
     };
 
-    // @Override
     public height(heightValue: string): Rectangle {
         this.heightValue = heightValue;
         return this;
 
     };
 
-    // @Override
     public dimensions(widthValue: string, heightValue: string): Rectangle {
         this.width(widthValue);
         this.height(heightValue);
