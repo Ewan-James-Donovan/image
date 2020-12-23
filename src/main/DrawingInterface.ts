@@ -5,6 +5,7 @@ import Path from "./canvas-object/subclasses/path/Path";
 import PolygonInterface from "./canvas-object/subclasses/path/subclasses/polygon/PolygonInterface";
 import PredefinedPolygonInterface from "./canvas-object/subclasses/path/subclasses/polygon/PredefinedPolygonInterface";
 import ArcInterface from "./canvas-object/subclasses/path/subclasses/arc/ArcInterface";
+import Text from "./canvas-object/subclasses/Text";
 
 
 export default interface DrawingInterface {
@@ -21,7 +22,7 @@ export default interface DrawingInterface {
     hexagon(): PredefinedPolygonInterface;
     octagon(): PredefinedPolygonInterface;
     arc(): ArcInterface; 
-    // text(): Text 
+    text(): Text;
     // axis(): Axis; 
     // axes(): Axes; 
     // grid(): Grid; 

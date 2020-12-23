@@ -14,7 +14,7 @@ export default class SVGBuilder {
                     tag.getAttributes().forEach((attribute: Attribute) => {
                         canvasObjectString += ` ${attribute.getKey()}="${attribute.getValue()}"`;
                     })
-                    canvasObjectString += `></${tag.getTagName()}>`;
+                    canvasObjectString += `>${tag.getContent()}</${tag.getTagName()}>`;
                 }
             })
             html += canvasObjectString;

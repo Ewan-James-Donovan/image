@@ -12,9 +12,10 @@ import Pentagon from "./canvas-object/subclasses/path/subclasses/polygon/subclas
 import Hexagon from "./canvas-object/subclasses/path/subclasses/polygon/subclasses/Hexagon";
 import Octagon from "./canvas-object/subclasses/path/subclasses/polygon/subclasses/Octagon";
 import PolygonInterface from "./canvas-object/subclasses/path/subclasses/polygon/PolygonInterface";
-import PredefinedPolygonInterface from "./canvas-object/subclasses/path/subclasses/polygon/subclasses/PredefinedPolygonInterface";
+import PredefinedPolygonInterface from "./canvas-object/subclasses/path/subclasses/polygon/PredefinedPolygonInterface";
 import Arc from "./canvas-object/subclasses/path/subclasses/arc/Arc";
 import ArcInterface from "./canvas-object/subclasses/path/subclasses/arc/ArcInterface";
+import Text from "./canvas-object/subclasses/Text";
 
 export default class SVGCanvas implements DrawingInterface {
 
@@ -124,37 +125,42 @@ export default class SVGCanvas implements DrawingInterface {
     }
 
     // @Override
-    public polygon(): PredefinedPolygonInterface {
+    public polygon(): PolygonInterface {
         return this.register(new Polygon());
     }
 
     // @Override
-    public triangle(): PolygonInterface {
+    public triangle(): PredefinedPolygonInterface {
         return this.register(new Triangle());
     }
 
     // @Override
-    public square(): PolygonInterface {
+    public square(): PredefinedPolygonInterface {
         return this.register(new Square());
     }
 
     // @Override
-    public pentagon(): PolygonInterface {
+    public pentagon(): PredefinedPolygonInterface {
         return this.register(new Pentagon());
     }
 
     // @Override
-    public hexagon(): PolygonInterface {
+    public hexagon(): PredefinedPolygonInterface {
         return this.register(new Hexagon());
     }
 
     // @Override
-    public octagon(): PolygonInterface {
+    public octagon(): PredefinedPolygonInterface {
         return this.register(new Octagon());
     }
 
     // @Override
     public arc(): ArcInterface {
         return this.register(new Arc());
+    }
+
+    // @Override
+    public text(): Text {
+        return this.register(new Text());
     }
 }

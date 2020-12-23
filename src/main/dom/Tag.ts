@@ -4,9 +4,19 @@ export default class Tag {
 
     private tagName: string;
     private attributes: Array<Attribute> = new Array<Attribute>();
+    private content: string;
 
     constructor(tagName: string) {
         this.tagName = tagName;
+    }
+
+    public setContent(content: string): Tag {
+        this.content = content;
+        return this;
+    }
+
+    public getContent(): string {
+        return `${this.content}`;
     }
 
     public addAttribute(attribute: Attribute): Tag {
