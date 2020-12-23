@@ -1,9 +1,9 @@
 import Attribute from "../../../../../dom/Attribute";
 import Tag from "../../../../../dom/Tag";
 import Path from "../../Path";
-import PolygonSuperInterface from "./subclasses/PolygonSuperInterface";
+import PolygonInterface from "./PolygonInterface";
 
-export default class Polygon extends Path<PolygonSuperInterface> implements PolygonSuperInterface {
+export default class Polygon extends Path<PolygonInterface> implements PolygonInterface {
 
     private numberOfSides: number;
     private radiusValue: number;
@@ -51,37 +51,37 @@ export default class Polygon extends Path<PolygonSuperInterface> implements Poly
     }
 
     // @Override
-    public rotate(radiansToRotate: number): PolygonSuperInterface {
+    public rotate(radiansToRotate: number): PolygonInterface {
         this.radiansToRotate = radiansToRotate;
         return this;
     }
 
     // @Override
-    public sides(numberOfSides: number): PolygonSuperInterface {
+    public sides(numberOfSides: number): PolygonInterface {
         this.numberOfSides = Math.round(numberOfSides);
         return this;
     }
 
     // @Override
-    public radius(radiusValue: number): PolygonSuperInterface {
+    public radius(radiusValue: number): PolygonInterface {
         this.radiusValue = radiusValue;
         return this;
     }
 
     // @Override
-    public x(x: number): PolygonSuperInterface {
+    public x(x: number): PolygonInterface {
         this.xValue = x;
         return this;
     }
 
     // @Override
-    public y(y: number): PolygonSuperInterface {
+    public y(y: number): PolygonInterface {
         this.yValue = y;
         return this;
     }
 
     // @Override
-    public position(x: number, y: number): PolygonSuperInterface {
+    public position(x: number, y: number): PolygonInterface {
         this.x(x);
         this.y(y);
         return this;

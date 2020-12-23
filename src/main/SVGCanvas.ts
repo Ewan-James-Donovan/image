@@ -12,7 +12,7 @@ import Pentagon from "./canvas-object/subclasses/path/subclasses/polygon/subclas
 import Hexagon from "./canvas-object/subclasses/path/subclasses/polygon/subclasses/Hexagon";
 import Octagon from "./canvas-object/subclasses/path/subclasses/polygon/subclasses/Octagon";
 import PolygonInterface from "./canvas-object/subclasses/path/subclasses/polygon/PolygonInterface";
-import PolygonSuperInterface from "./canvas-object/subclasses/path/subclasses/polygon/subclasses/PolygonSuperInterface";
+import PredefinedPolygonInterface from "./canvas-object/subclasses/path/subclasses/polygon/subclasses/PredefinedPolygonInterface";
 import Arc from "./canvas-object/subclasses/path/subclasses/arc/Arc";
 import ArcInterface from "./canvas-object/subclasses/path/subclasses/arc/ArcInterface";
 
@@ -124,7 +124,7 @@ export default class SVGCanvas implements DrawingInterface {
     }
 
     // @Override
-    public polygon(): PolygonSuperInterface {
+    public polygon(): PredefinedPolygonInterface {
         return this.register(new Polygon());
     }
 

@@ -1,7 +1,7 @@
 import Polygon from "../Polygon";
-import PolygonInterface from "../PolygonInterface";
+import PredefinedPolygonInterface from "../PredefinedPolygonInterface";
 
-export default class Pentagon extends Polygon implements PolygonInterface {
+export default class Pentagon extends Polygon implements PredefinedPolygonInterface {
 
     constructor() {
         super();
