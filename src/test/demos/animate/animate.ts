@@ -1,17 +1,17 @@
 import SVGCanvas from "../../../main/SVGCanvas";
 
-const canvas: SVGCanvas = new SVGCanvas("test");
+const sc: SVGCanvas = new SVGCanvas("test");
 
-canvas.animate({ r: 100, t: 0 }, (state: any) => {
+sc.animate({ r: 100, t: 0 }, (state: any) => {
 
-    canvas.circle()
+    sc.circle()
         .radius(String(Math.sin(state.r) * 100 + 100) + "px")
         .position("320px", "320px")
         .fill("green")
         .fillOpacity("20%");
 
-    if (canvas.timeElapsed() >= 4000) {
-        canvas.circle()
+    if (sc.timeElapsed() >= 4000) {
+        sc.circle()
             .radius(String(Math.cos(state.r) * 100 + 100) + "px")
             .position("320px", "320px")
             .fill("blue")
@@ -19,14 +19,14 @@ canvas.animate({ r: 100, t: 0 }, (state: any) => {
 
     }
 
-    if (canvas.timeElapsedIsBetween(2000, 4000)) {
-        canvas.hexagon()
+    if (sc.timeElapsedIsBetween(2000, 4000)) {
+        sc.hexagon()
             .radius(Math.cos(state.r) * 100 + 100)
             .position(320, 320)
             .fill("lime")
             .rotate(state.r)
             .fillOpacity("20%");
-        canvas.arc()
+        sc.arc()
             .from(state.t)
             .to(state.t*3)
             .position(320, 320)

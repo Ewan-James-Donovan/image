@@ -1,8 +1,8 @@
 import SVGCanvas from "../../../main/SVGCanvas";
 
-const canvas: SVGCanvas = new SVGCanvas("test");
+const sc: SVGCanvas = new SVGCanvas("test");
 
-canvas.path()
+sc.path()
     .points([
         [50, 50],
         [100, 300],
@@ -16,4 +16,4 @@ canvas.path()
     .fill("lime")
     .fillOpacity("30%");
 
-canvas.render();
+sc.render();

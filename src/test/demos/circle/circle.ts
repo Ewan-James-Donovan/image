@@ -1,13 +1,13 @@
 import SVGCanvas from "../../../main/SVGCanvas";
 
-const canvas: SVGCanvas = new SVGCanvas("test");
+const sc: SVGCanvas = new SVGCanvas("test");
 
-canvas.circle()
+sc.circle()
     .radius("150px")
     .position("320px", "320px")
     .fill("green")
 
-canvas.circle()
+sc.circle()
     .radius("200px")
     .position("320px", "320px")
     .fill("cyan")
@@ -18,4 +18,4 @@ canvas.circle()
     .fillOpacity("50%")
     .strokeOpacity("50%");
 
-canvas.render();
+sc.render();

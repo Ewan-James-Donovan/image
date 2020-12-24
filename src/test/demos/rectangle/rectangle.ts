@@ -1,13 +1,13 @@
 import SVGCanvas from "../../../main/SVGCanvas";
 
-const canvas: SVGCanvas = new SVGCanvas("test");
+const sc: SVGCanvas = new SVGCanvas("test");
 
-canvas.rectangle()
+sc.rectangle()
     .dimensions("100px", "70px")
     .position("270px", "285px")
     .fill("green")
 
-canvas.rectangle()
+sc.rectangle()
     .dimensions("100px", "70px")
     .position("320px", "320px")
     .fill("cyan")
@@ -19,4 +19,4 @@ canvas.rectangle()
     .strokeOpacity("50%")
     .roundCorners("20px");
 
-canvas.render();
+sc.render();

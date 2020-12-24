@@ -1,9 +1,9 @@
 import SVGCanvas from "../../../main/SVGCanvas";
 
-const canvas: SVGCanvas = new SVGCanvas("test");
+const sc: SVGCanvas = new SVGCanvas("test");
 
-canvas.animate({ r: 100 }, (state: any) => {
-    canvas.circle()
+sc.animate({ r: 100 }, (state: any) => {
+    sc.circle()
         .radius(String(Math.sin(state.r) * 100 + 100) + "px")
         .position("320px", "320px")
         .fill("green")

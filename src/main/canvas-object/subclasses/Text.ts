@@ -17,9 +17,22 @@ export default class Text extends CanvasObject implements Position<Text>, Fill<T
     private dashArray: string;
     private strokeOpacityValue: string;
     private textValue: string;
+    private fontFamily: string;
+    private sizeValue: string;
 
-    public string(textValue: string) {
+    public string(textValue: string): Text {
         this.textValue = textValue;
+        return this;
+    }
+
+    public font(fontFamily: string): Text {
+        this.fontFamily = fontFamily;
+        return this;
+    }
+
+    public size(sizeValue: string): Text {
+        this.sizeValue = sizeValue;
+        return this;
     }
 
     // @Override
@@ -35,6 +48,8 @@ export default class Text extends CanvasObject implements Position<Text>, Fill<T
                 .addAttribute(new Attribute("stroke-linecap", this.lineCapType))
                 .addAttribute(new Attribute("stroke-dasharray", this.dashArray))
                 .addAttribute(new Attribute("stroke-opacity", this.strokeOpacityValue))
+                .addAttribute(new Attribute("font-family", this.fontFamily))
+                .addAttribute(new Attribute("font-size", this.sizeValue))
                 .setContent(this.textValue)
         );
     }

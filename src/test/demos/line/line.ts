@@ -1,8 +1,8 @@
 import SVGCanvas from "../../../main/SVGCanvas";
 
-const canvas: SVGCanvas = new SVGCanvas("test");
+const sc: SVGCanvas = new SVGCanvas("test");
 
-canvas.line()
+sc.line()
     .points("50px", "50px", "590px", "590px")
     .lineCap("butt")
     .stroke("blue")
@@ -10,7 +10,7 @@ canvas.line()
     .dash("30,30,50,50")
     .strokeOpacity("50%");
 
-canvas.line()
+sc.line()
     .points("50px", "50px", "590px", "590px")
     .lineCap("round")
     .stroke("magenta")
@@ -18,4 +18,4 @@ canvas.line()
     .dash("30,30,50,50")
     .strokeOpacity("50%");
 
-canvas.render();
+sc.render();

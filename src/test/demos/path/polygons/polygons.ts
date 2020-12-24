@@ -1,8 +1,8 @@
 import SVGCanvas from "../../../../main/SVGCanvas";
 
-const canvas: SVGCanvas = new SVGCanvas("test");
+const sc: SVGCanvas = new SVGCanvas("test");
 
-canvas.polygon()
+sc.polygon()
     .sides(24)
     .position(320, 320)
     .radius(100)
@@ -15,7 +15,7 @@ canvas.polygon()
     .fill("lime")
     .fillOpacity("10%");
 
-canvas.triangle()
+sc.triangle()
     .position(320, 320)
     .radius(100)
     .rotate((2 * Math.PI) / 20)
@@ -27,7 +27,7 @@ canvas.triangle()
     .fill("lime")
     .fillOpacity("10%");
 
-canvas.square()
+sc.square()
     .position(320, 320)
     .radius(100)
     .rotate((2 * Math.PI) / 20)
@@ -39,7 +39,7 @@ canvas.square()
     .fill("lime")
     .fillOpacity("10%");
 
-canvas.pentagon()
+sc.pentagon()
     .position(320, 320)
     .radius(100)
     .rotate((2 * Math.PI) / 20)
@@ -51,7 +51,7 @@ canvas.pentagon()
     .fill("lime")
     .fillOpacity("10%");
 
-canvas.hexagon()
+sc.hexagon()
     .position(320, 320)
     .radius(100)
     .rotate((2 * Math.PI) / 20)
@@ -63,7 +63,7 @@ canvas.hexagon()
     .fill("lime")
     .fillOpacity("10%");
 
-canvas.octagon()
+sc.octagon()
     .position(320, 320)
     .radius(100)
     .rotate((2 * Math.PI) / 20)
@@ -75,4 +75,4 @@ canvas.octagon()
     .fill("lime")
     .fillOpacity("10%");
 
-canvas.render();
+sc.render();

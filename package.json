@@ -1,6 +1,6 @@
 {
   "name": "svg-canvas",
-  "version": "0.8.1",
+  "version": "0.10.0",
   "description": "'svg-canvas' is a TypeScript package used to simplify the drawing and animation of SVG elements on the web using fluent interfaces and 'frame-by-frame' animation.",
   "main": "index.js",
   "scripts": {

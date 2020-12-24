@@ -1,8 +1,8 @@
 import SVGCanvas from "../../../../main/SVGCanvas";
 
-const canvas: SVGCanvas = new SVGCanvas("test");
+const sc: SVGCanvas = new SVGCanvas("test");
 
-canvas.arc()
+sc.arc()
     .from(Math.PI / 4)
     .to(Math.PI / 2 + Math.PI / 4)
     .position(320, 320)
@@ -11,4 +11,4 @@ canvas.arc()
     .stroke("black")
     .strokeWidth("5px");
 
-canvas.render();
+sc.render();
