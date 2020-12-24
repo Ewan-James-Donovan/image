@@ -40,43 +40,43 @@ export default class Rectangle extends CanvasObject implements Position<Rectangl
         );
     }
 
-    public roundCorners(cornerRadius: string): Rectangle {
-        this.cornerRadius = cornerRadius;
+    public roundCorners(cornerRadius: number): Rectangle {
+        this.cornerRadius = `${cornerRadius}`;
         return this;
     }
 
-    public width(widthValue: string): Rectangle {
-        this.widthValue = widthValue;
+    public width(widthValue: number): Rectangle {
+        this.widthValue = `${widthValue}`;
         return this;
 
     };
 
-    public height(heightValue: string): Rectangle {
-        this.heightValue = heightValue;
+    public height(heightValue: number): Rectangle {
+        this.heightValue = `${heightValue}`;
         return this;
 
     };
 
-    public dimensions(widthValue: string, heightValue: string): Rectangle {
+    public dimensions(widthValue: number, heightValue: number): Rectangle {
         this.width(widthValue);
         this.height(heightValue);
         return this;
     };
 
     // @Override
-    public x(x: string): Rectangle {
-        this.xValue = x;
+    public x(x: number): Rectangle {
+        this.xValue = `${x}`;
         return this;
     }
 
     // @Override
-    public y(y: string): Rectangle {
-        this.yValue = y;
+    public y(y: number): Rectangle {
+        this.yValue = `${y}`;
         return this;
     }
 
     // @Override
-    public position(x: string, y: string): Rectangle {
+    public position(x: number, y: number): Rectangle {
         this.x(x);
         this.y(y);
         return this;
@@ -101,8 +101,8 @@ export default class Rectangle extends CanvasObject implements Position<Rectangl
     }
 
     // @Override
-    public strokeWidth(strokeWidthValue: string): Rectangle {
-        this.strokeWidthValue = strokeWidthValue;
+    public strokeWidth(strokeWidthValue: number): Rectangle {
+        this.strokeWidthValue = `${strokeWidthValue}`;
         return this;
     };
 

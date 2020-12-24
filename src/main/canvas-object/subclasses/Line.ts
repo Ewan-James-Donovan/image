@@ -31,39 +31,39 @@ export default class Line extends CanvasObject implements Stroke<Line> {
         );
     }
 
-    public x1(x1Value: string): Line {
-        this.x1Value = x1Value;
+    public x1(x1Value: number): Line {
+        this.x1Value = `${x1Value}`;
         return this;
     }
 
-    public x2(x2Value: string): Line {
-        this.x2Value = x2Value;
+    public x2(x2Value: number): Line {
+        this.x2Value = `${x2Value}`;
         return this;
     }
 
-    public y1(y1Value: string): Line {
-        this.y1Value = y1Value;
+    public y1(y1Value: number): Line {
+        this.y1Value = `${y1Value}`;
         return this;
     }
 
-    public y2(y2Value: string): Line {
-        this.y2Value = y2Value;
+    public y2(y2Value: number): Line {
+        this.y2Value = `${y2Value}`;
         return this;
     }
 
-    public point1(x1Value: string, y1Value: string): Line {
+    public point1(x1Value: number, y1Value: number): Line {
         this.x1(x1Value);
         this.y1(y1Value);
         return this;
     }
 
-    public point2(x2Value: string, y2Value: string): Line {
+    public point2(x2Value: number, y2Value: number): Line {
         this.x2(x2Value);
         this.y2(y2Value);
         return this;
     }
 
-    public points(x1Value: string, y1Value: string, x2Value: string, y2Value: string): Line {
+    public points(x1Value: number, y1Value: number, x2Value: number, y2Value: number): Line {
         this.point1(x1Value, y1Value);
         this.point2(x2Value, y2Value);
         return this;
@@ -76,8 +76,8 @@ export default class Line extends CanvasObject implements Stroke<Line> {
     }
 
     // @Override
-    public strokeWidth(strokeWidthValue: string): Line {
-        this.strokeWidthValue = strokeWidthValue;
+    public strokeWidth(strokeWidthValue: number): Line {
+        this.strokeWidthValue = `${strokeWidthValue}`;
         return this;
     };
 

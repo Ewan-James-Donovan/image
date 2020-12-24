@@ -37,25 +37,25 @@ export default class Circle extends CanvasObject implements Radius<Circle>, Posi
     }
 
     // @Override
-    public radius(radiusValue: string): Circle {
-        this.radiusValue = radiusValue;
+    public radius(radiusValue: number): Circle {
+        this.radiusValue = `${radiusValue}`;
         return this;
     }
 
     // @Override
-    public x(x: string): Circle {
-        this.xValue = x;
+    public x(x: number): Circle {
+        this.xValue = `${x}`;
         return this;
     }
 
     // @Override
-    public y(y: string): Circle {
-        this.yValue = y;
+    public y(y: number): Circle {
+        this.yValue = `${y}`;
         return this;
     }
 
     // @Override
-    public position(x: string, y: string): Circle {
+    public position(x: number, y: number): Circle {
         this.x(x);
         this.y(y);
         return this;
@@ -80,8 +80,8 @@ export default class Circle extends CanvasObject implements Radius<Circle>, Posi
     }
 
     // @Override
-    public strokeWidth(strokeWidthValue: string): Circle {
-        this.strokeWidthValue = strokeWidthValue;
+    public strokeWidth(strokeWidthValue: number): Circle {
+        this.strokeWidthValue = `${strokeWidthValue}`;
         return this;
     };
 

@@ -81,5 +81,5 @@ componentDidMount() {
 ### Vanilla JavaScript
 ## Features
 ## Class Diagram
-<img src="./docs/diagrams/classdiagram.svg">
-<img src="./docs/diagrams/legend.svg">
+<!-- <img src="./docs/diagrams/classdiagram.svg">
+<img src="./docs/diagrams/legend.svg"> -->

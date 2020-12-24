@@ -55,19 +55,19 @@ export default class Text extends CanvasObject implements Position<Text>, Fill<T
     }
 
     // @Override
-    public x(x: string): Text {
-        this.xValue = x;
+    public x(x: number): Text {
+        this.xValue = `${x}`;
         return this;
     }
 
     // @Override
-    public y(y: string): Text {
-        this.yValue = y;
+    public y(y: number): Text {
+        this.yValue = `${y}`;
         return this;
     }
 
     // @Override
-    public position(x: string, y: string): Text {
+    public position(x: number, y: number): Text {
         this.x(x);
         this.y(y);
         return this;
@@ -92,8 +92,8 @@ export default class Text extends CanvasObject implements Position<Text>, Fill<T
     }
 
     // @Override
-    public strokeWidth(strokeWidthValue: string): Text {
-        this.strokeWidthValue = strokeWidthValue;
+    public strokeWidth(strokeWidthValue: number): Text {
+        this.strokeWidthValue = `${strokeWidthValue}`;
         return this;
     };
 

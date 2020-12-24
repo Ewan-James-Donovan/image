@@ -4,7 +4,7 @@ import CanvasObject from "../../CanvasObject";
 import Stroke from "../../common-interfaces/Stroke";
 import Fill from "../../common-interfaces/Fill";
 
-export default class Path<SubType> extends CanvasObject implements Stroke<any>, Fill<any> {
+export default class Path<SubType> extends CanvasObject implements Stroke<SubType>, Fill<SubType> {
 
     private pathString: string;
     protected strokeColor: string;
@@ -62,8 +62,8 @@ export default class Path<SubType> extends CanvasObject implements Stroke<any>, 
     }
 
     // @Override
-    public strokeWidth(strokeWidthValue: string): SubType {
-        this.strokeWidthValue = strokeWidthValue;
+    public strokeWidth(strokeWidthValue: number): SubType {
+        this.strokeWidthValue = `${strokeWidthValue}`;
         return <SubType> <unknown> this;
     };
 
