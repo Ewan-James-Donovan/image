@@ -1,7 +1,6 @@
 import Polygon from "../Polygon";
-import PredefinedPolygonInterface from "../PredefinedPolygonInterface";
 
-export default class Triangle extends Polygon implements PredefinedPolygonInterface {
+export default class Triangle extends Polygon {
 
     constructor() {
         super();

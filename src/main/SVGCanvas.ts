@@ -16,6 +16,7 @@ import PredefinedPolygonInterface from "./canvas-object/subclasses/path/subclass
 import Arc from "./canvas-object/subclasses/path/subclasses/arc/Arc";
 import ArcInterface from "./canvas-object/subclasses/path/subclasses/arc/ArcInterface";
 import Text from "./canvas-object/subclasses/Text";
+import PathInterface from "./canvas-object/subclasses/path/PathInterface";
 
 export default class SVGCanvas implements DrawingInterface {
 
@@ -120,8 +121,8 @@ export default class SVGCanvas implements DrawingInterface {
     }
 
     // @Override
-    public path(): Path<any> {
-        return this.register(new Path());
+    public path(): Path<PathInterface> {
+        return this.register(new Path<PathInterface>());
     }
 
     // @Override
