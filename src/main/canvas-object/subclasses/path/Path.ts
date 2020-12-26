@@ -4,6 +4,7 @@ import CanvasObject from "../../CanvasObject";
 import Stroke from "../../common-interfaces/Stroke";
 import Fill from "../../common-interfaces/Fill";
 
+// Accessed publicly via the PathInterface
 export default class Path<SubType> extends CanvasObject implements Stroke<SubType>, Fill<SubType> {
 
     private pathString: string;
