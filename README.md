@@ -52,7 +52,7 @@ componentDidMount() {
 
     sc.circle()
         .radius("200px")
-        .position("320px", "320px")
+        .position(320, 320)
         .fill("cyan")
         .lineCap("round")
         .stroke("magenta")
@@ -72,7 +72,7 @@ componentDidMount() {
     sc.animate({ r: 0 }, (state: any) => {
         sc.circle()
             .radius(`${state.r % 100}px`)
-            .position("320px", "320px")
+            .position(320, 320)
             .fill("cyan");
         state.r++;
     });

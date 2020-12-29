@@ -5,12 +5,12 @@ import PolygonInterface from "./PolygonInterface";
 
 export default class Polygon extends Path<PolygonInterface> implements PolygonInterface {
 
-    private numberOfSides: number;
-    private radiusValue: number;
-    private xValue: number;
-    private yValue: number;
+    private numberOfSides: number = 9;
+    private radiusValue: number = 1;
+    private xValue: number = 0;
+    private yValue: number = 0;
     private nestedPointArray: Array<Array<number>>;
-    private radiansToRotate: number;
+    private radiansToRotate: number = 0;
 
     // @Override
     public prepareForBuild(): void {
